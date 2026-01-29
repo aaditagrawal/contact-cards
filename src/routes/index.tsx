@@ -11,15 +11,15 @@ import { contactReducer, initialContactState } from '@/lib/contact-reducer'
 export const Route = createFileRoute('/')({ component: ContactCardPage })
 
 const ACCENT_COLORS = [
-  { name: 'Black', value: '#000000' },
-  { name: 'Charcoal', value: '#1c1c1e' },
-  { name: 'Slate', value: '#334155' },
-  { name: 'Navy', value: '#1e3a5f' },
-  { name: 'Indigo', value: '#312e81' },
-  { name: 'Violet', value: '#4c1d95' },
-  { name: 'Wine', value: '#6b1839' },
-  { name: 'Forest', value: '#14532d' },
-  { name: 'Espresso', value: '#3c1a0e' },
+  { name: 'Black', value: '#0a0a0a' },
+  { name: 'Graphite', value: '#2b2b2b' },
+  { name: 'Slate', value: '#3b4252' },
+  { name: 'Ocean', value: '#1a3a4a' },
+  { name: 'Midnight', value: '#1e2a4a' },
+  { name: 'Plum', value: '#3b1f4a' },
+  { name: 'Burgundy', value: '#4a1525' },
+  { name: 'Pine', value: '#1a3a2a' },
+  { name: 'Ember', value: '#4a2a1a' },
 ] as const
 
 function ContactCardPage() {
@@ -29,15 +29,23 @@ function ContactCardPage() {
 
   return (
     <div className="bg-background min-h-screen flex flex-col">
-      <header className="border-b px-4 py-3 flex items-center justify-between shrink-0">
-        <div className="flex items-center gap-2">
-          <IconId className="size-4 text-primary" />
-          <h1 className="text-xs font-semibold uppercase tracking-wider">
-            Contact Cards
-          </h1>
+      <header className="border-b shrink-0">
+        <div className="mx-auto w-full max-w-5xl px-4 md:px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <IconId className="size-4 text-primary" />
+            <h1 className="text-xs font-semibold uppercase tracking-wider">
+              Contact Cards
+            </h1>
+          </div>
+          <ThemeToggle theme={theme} setTheme={setTheme} />
         </div>
-        <ThemeToggle theme={theme} setTheme={setTheme} />
       </header>
+
+      <div className="mx-auto w-full max-w-5xl p-4 md:p-6 pb-0 md:pb-0">
+        <p className="text-sm text-muted-foreground max-w-xl">
+          Build a contact card, toggle the fields you want, and download it as a PNG with an embedded QR code. Anyone can scan it with their camera app to save your info.
+        </p>
+      </div>
 
       <div className="mx-auto w-full max-w-5xl flex-1 grid md:grid-cols-2 gap-6 p-4 md:p-6">
         <ScrollArea className="md:h-[calc(100vh-4rem)]">
