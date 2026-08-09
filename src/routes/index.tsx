@@ -33,9 +33,7 @@ function ContactCardPage() {
         <div className="mx-auto w-full max-w-5xl px-4 md:px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <IconId className="size-4 text-primary" />
-            <h1 className="text-xs font-semibold uppercase tracking-wider">
-              Contact Cards
-            </h1>
+            <h1 className="text-xs font-semibold uppercase tracking-wider">Contact Cards</h1>
           </div>
           <ThemeToggle theme={theme} setTheme={setTheme} />
         </div>
@@ -43,7 +41,8 @@ function ContactCardPage() {
 
       <div className="mx-auto w-full max-w-5xl p-4 md:p-6 pb-0 md:pb-0">
         <p className="text-sm text-muted-foreground max-w-xl">
-          Build a contact card, toggle the fields you want, and download it as a PNG with an embedded QR code. Anyone can scan it with their camera app to save your info.
+          Build a contact card, toggle the fields you want, and download it as a PNG with an
+          embedded QR code. Anyone can scan it with their camera app to save your info.
         </p>
       </div>
 

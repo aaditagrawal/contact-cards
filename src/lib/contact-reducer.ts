@@ -40,10 +40,7 @@ export const initialContactState: ContactState = {
   customFields: [],
 }
 
-export function contactReducer(
-  state: ContactState,
-  action: ContactAction,
-): ContactState {
+export function contactReducer(state: ContactState, action: ContactAction): ContactState {
   switch (action.type) {
     // Name
     case 'SET_USE_ALIAS':
@@ -71,18 +68,14 @@ export function contactReducer(
       return {
         ...state,
         [action.payload.field]: state[action.payload.field].map((e) =>
-          e.id === action.payload.id
-            ? { ...e, [action.payload.key]: action.payload.value }
-            : e,
+          e.id === action.payload.id ? { ...e, [action.payload.key]: action.payload.value } : e,
         ),
       }
     case 'TOGGLE_MULTI_ENTRY':
       return {
         ...state,
         [action.payload.field]: state[action.payload.field].map((e) =>
-          e.id === action.payload.id
-            ? { ...e, enabled: action.payload.enabled }
-            : e,
+          e.id === action.payload.id ? { ...e, enabled: action.payload.enabled } : e,
         ),
       }
 
@@ -113,18 +106,14 @@ export function contactReducer(
       return {
         ...state,
         addresses: state.addresses.map((a) =>
-          a.id === action.payload.id
-            ? { ...a, [action.payload.key]: action.payload.value }
-            : a,
+          a.id === action.payload.id ? { ...a, [action.payload.key]: action.payload.value } : a,
         ),
       }
     case 'TOGGLE_ADDRESS':
       return {
         ...state,
         addresses: state.addresses.map((a) =>
-          a.id === action.payload.id
-            ? { ...a, enabled: action.payload.enabled }
-            : a,
+          a.id === action.payload.id ? { ...a, enabled: action.payload.enabled } : a,
         ),
       }
 
@@ -164,18 +153,14 @@ export function contactReducer(
       return {
         ...state,
         socials: state.socials.map((s) =>
-          s.id === action.payload.id
-            ? { ...s, [action.payload.key]: action.payload.value }
-            : s,
+          s.id === action.payload.id ? { ...s, [action.payload.key]: action.payload.value } : s,
         ),
       }
     case 'TOGGLE_SOCIAL':
       return {
         ...state,
         socials: state.socials.map((s) =>
-          s.id === action.payload.id
-            ? { ...s, enabled: action.payload.enabled }
-            : s,
+          s.id === action.payload.id ? { ...s, enabled: action.payload.enabled } : s,
         ),
       }
 
@@ -183,10 +168,7 @@ export function contactReducer(
     case 'ADD_CUSTOM_FIELD':
       return {
         ...state,
-        customFields: [
-          ...state.customFields,
-          { id: uid(), label: '', value: '', enabled: true },
-        ],
+        customFields: [...state.customFields, { id: uid(), label: '', value: '', enabled: true }],
       }
     case 'REMOVE_CUSTOM_FIELD':
       return {
@@ -197,18 +179,14 @@ export function contactReducer(
       return {
         ...state,
         customFields: state.customFields.map((f) =>
-          f.id === action.payload.id
-            ? { ...f, [action.payload.field]: action.payload.value }
-            : f,
+          f.id === action.payload.id ? { ...f, [action.payload.field]: action.payload.value } : f,
         ),
       }
     case 'SET_CUSTOM_FIELD_ENABLED':
       return {
         ...state,
         customFields: state.customFields.map((f) =>
-          f.id === action.payload.id
-            ? { ...f, enabled: action.payload.enabled }
-            : f,
+          f.id === action.payload.id ? { ...f, enabled: action.payload.enabled } : f,
         ),
       }
 

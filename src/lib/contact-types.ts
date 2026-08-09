@@ -80,27 +80,74 @@ export interface ContactState {
 }
 
 // Type options for each multi-field
-export const phoneTypes = ['Mobile', 'Home', 'Work', 'Main', 'Work Fax', 'Home Fax', 'Pager', 'Other'] as const
+export const phoneTypes = [
+  'Mobile',
+  'Home',
+  'Work',
+  'Main',
+  'Work Fax',
+  'Home Fax',
+  'Pager',
+  'Other',
+] as const
 export const emailTypes = ['Personal', 'Work', 'Other'] as const
 export const websiteTypes = ['Personal', 'Work', 'Blog', 'Portfolio', 'Other'] as const
 export const addressTypes = ['Home', 'Work', 'Other'] as const
-export const socialPlatforms = ['LinkedIn', 'X (Twitter)', 'GitHub', 'Instagram', 'Facebook', 'YouTube', 'TikTok', 'Mastodon', 'Bluesky', 'Other'] as const
+export const socialPlatforms = [
+  'LinkedIn',
+  'X (Twitter)',
+  'GitHub',
+  'Instagram',
+  'Facebook',
+  'YouTube',
+  'TikTok',
+  'Mastodon',
+  'Bluesky',
+  'Other',
+] as const
 
 export type ContactAction =
   // Name
   | { type: 'SET_USE_ALIAS'; payload: boolean }
-  | { type: 'SET_NAME_FIELD'; payload: { field: 'firstName' | 'lastName' | 'middleName' | 'prefix' | 'suffix' | 'alias'; value: string } }
+  | {
+      type: 'SET_NAME_FIELD'
+      payload: {
+        field: 'firstName' | 'lastName' | 'middleName' | 'prefix' | 'suffix' | 'alias'
+        value: string
+      }
+    }
 
   // Multi-field (phones, emails, websites)
-  | { type: 'ADD_MULTI_ENTRY'; payload: { field: 'phones' | 'emails' | 'websites'; entryType: string } }
+  | {
+      type: 'ADD_MULTI_ENTRY'
+      payload: { field: 'phones' | 'emails' | 'websites'; entryType: string }
+    }
   | { type: 'REMOVE_MULTI_ENTRY'; payload: { field: 'phones' | 'emails' | 'websites'; id: string } }
-  | { type: 'UPDATE_MULTI_ENTRY'; payload: { field: 'phones' | 'emails' | 'websites'; id: string; key: 'type' | 'value'; value: string } }
-  | { type: 'TOGGLE_MULTI_ENTRY'; payload: { field: 'phones' | 'emails' | 'websites'; id: string; enabled: boolean } }
+  | {
+      type: 'UPDATE_MULTI_ENTRY'
+      payload: {
+        field: 'phones' | 'emails' | 'websites'
+        id: string
+        key: 'type' | 'value'
+        value: string
+      }
+    }
+  | {
+      type: 'TOGGLE_MULTI_ENTRY'
+      payload: { field: 'phones' | 'emails' | 'websites'; id: string; enabled: boolean }
+    }
 
   // Address
   | { type: 'ADD_ADDRESS'; payload: { entryType: string } }
   | { type: 'REMOVE_ADDRESS'; payload: string }
-  | { type: 'UPDATE_ADDRESS'; payload: { id: string; key: 'type' | 'street' | 'city' | 'state' | 'zip' | 'country'; value: string } }
+  | {
+      type: 'UPDATE_ADDRESS'
+      payload: {
+        id: string
+        key: 'type' | 'street' | 'city' | 'state' | 'zip' | 'country'
+        value: string
+      }
+    }
   | { type: 'TOGGLE_ADDRESS'; payload: { id: string; enabled: boolean } }
 
   // Simple fields (company, department, jobTitle, birthday, pronouns, notes)
@@ -116,8 +163,21 @@ export type ContactAction =
   // Custom fields
   | { type: 'ADD_CUSTOM_FIELD' }
   | { type: 'REMOVE_CUSTOM_FIELD'; payload: string }
-  | { type: 'UPDATE_CUSTOM_FIELD'; payload: { id: string; field: 'label' | 'value'; value: string } }
+  | {
+      type: 'UPDATE_CUSTOM_FIELD'
+      payload: { id: string; field: 'label' | 'value'; value: string }
+    }
   | { type: 'SET_CUSTOM_FIELD_ENABLED'; payload: { id: string; enabled: boolean } }
 
-export type SimpleFieldKey = 'company' | 'department' | 'jobTitle' | 'birthday' | 'pronouns' | 'notes' | 'bloodGroup' | 'allergies' | 'medicalNotes' | 'emergencyContact'
+export type SimpleFieldKey =
+  | 'company'
+  | 'department'
+  | 'jobTitle'
+  | 'birthday'
+  | 'pronouns'
+  | 'notes'
+  | 'bloodGroup'
+  | 'allergies'
+  | 'medicalNotes'
+  | 'emergencyContact'
 export type MultiFieldKey = 'phones' | 'emails' | 'websites'

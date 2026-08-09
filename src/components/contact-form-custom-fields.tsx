@@ -10,10 +10,7 @@ interface ContactFormCustomFieldsProps {
   dispatch: React.Dispatch<ContactAction>
 }
 
-export function ContactFormCustomFields({
-  fields,
-  dispatch,
-}: ContactFormCustomFieldsProps) {
+export function ContactFormCustomFields({ fields, dispatch }: ContactFormCustomFieldsProps) {
   return (
     <div className="flex flex-col gap-3">
       {fields.map((cf) => (
@@ -62,9 +59,7 @@ export function ContactFormCustomFields({
             variant="ghost"
             size="icon-xs"
             className="mt-1"
-            onClick={() =>
-              dispatch({ type: 'REMOVE_CUSTOM_FIELD', payload: cf.id })
-            }
+            onClick={() => dispatch({ type: 'REMOVE_CUSTOM_FIELD', payload: cf.id })}
           >
             <IconX className="size-3" />
           </Button>

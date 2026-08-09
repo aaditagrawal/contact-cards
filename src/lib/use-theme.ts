@@ -18,8 +18,7 @@ export function useTheme() {
     const mq = window.matchMedia('(prefers-color-scheme: dark)')
 
     function apply() {
-      const isDark =
-        theme === 'dark' || (theme === 'system' && mq.matches)
+      const isDark = theme === 'dark' || (theme === 'system' && mq.matches)
       root.classList.toggle('dark', isDark)
     }
 

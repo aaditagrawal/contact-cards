@@ -2,15 +2,15 @@ import type { ContactState } from './contact-types'
 
 function vcardTypeMap(label: string): string {
   const map: Record<string, string> = {
-    'Mobile': 'CELL',
-    'Home': 'HOME',
-    'Work': 'WORK',
-    'Main': 'MAIN',
+    Mobile: 'CELL',
+    Home: 'HOME',
+    Work: 'WORK',
+    Main: 'MAIN',
     'Work Fax': 'WORK,FAX',
     'Home Fax': 'HOME,FAX',
-    'Pager': 'PAGER',
-    'Personal': 'HOME',
-    'Other': 'OTHER',
+    Pager: 'PAGER',
+    Personal: 'HOME',
+    Other: 'OTHER',
   }
   return map[label] ?? 'OTHER'
 }
@@ -22,15 +22,15 @@ function socialUrl(platform: string, handle: string): string {
   }
   const clean = handle.replace(/^@/, '')
   const prefixes: Record<string, string> = {
-    'LinkedIn': `https://linkedin.com/in/${clean}`,
+    LinkedIn: `https://linkedin.com/in/${clean}`,
     'X (Twitter)': `https://x.com/${clean}`,
-    'GitHub': `https://github.com/${clean}`,
-    'Instagram': `https://instagram.com/${clean}`,
-    'Facebook': `https://facebook.com/${clean}`,
-    'YouTube': `https://youtube.com/@${clean}`,
-    'TikTok': `https://tiktok.com/@${clean}`,
-    'Mastodon': handle, // Mastodon handles are full URLs or user@instance
-    'Bluesky': `https://bsky.app/profile/${clean}`,
+    GitHub: `https://github.com/${clean}`,
+    Instagram: `https://instagram.com/${clean}`,
+    Facebook: `https://facebook.com/${clean}`,
+    YouTube: `https://youtube.com/@${clean}`,
+    TikTok: `https://tiktok.com/@${clean}`,
+    Mastodon: handle, // Mastodon handles are full URLs or user@instance
+    Bluesky: `https://bsky.app/profile/${clean}`,
   }
   return prefixes[platform] ?? handle
 }
@@ -43,11 +43,8 @@ export function generateVCard(contact: ContactState): string {
     lines.push(`FN:${contact.alias}`)
     lines.push(`N:${contact.alias};;;;`)
   } else {
-    const parts = [contact.firstName, contact.middleName, contact.lastName]
-      .filter(Boolean)
-    const full = [contact.prefix, ...parts, contact.suffix]
-      .filter(Boolean)
-      .join(' ')
+    const parts = [contact.firstName, contact.middleName, contact.lastName].filter(Boolean)
+    const full = [contact.prefix, ...parts, contact.suffix].filter(Boolean).join(' ')
     if (full) {
       lines.push(`FN:${full}`)
       // N: Last;First;Middle;Prefix;Suffix
@@ -82,11 +79,12 @@ export function generateVCard(contact: ContactState): string {
   const hasCompany = contact.company.enabled && contact.company.value
   const hasDept = contact.department.enabled && contact.department.value
   if (hasCompany || hasDept) {
-    const org = hasCompany && hasDept
-      ? `${contact.company.value};${contact.department.value}`
-      : hasCompany
-        ? contact.company.value
-        : `;${contact.department.value}`
+    const org =
+      hasCompany && hasDept
+        ? `${contact.company.value};${contact.department.value}`
+        : hasCompany
+          ? contact.company.value
+          : `;${contact.department.value}`
     lines.push(`ORG:${org}`)
   }
   if (contact.jobTitle.enabled && contact.jobTitle.value) {

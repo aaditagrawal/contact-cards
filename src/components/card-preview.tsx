@@ -40,26 +40,21 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
     const fields: DisplayField[] = []
 
     for (const p of state.phones) {
-      if (p.enabled && p.value)
-        fields.push({ tag: p.type, value: p.value })
+      if (p.enabled && p.value) fields.push({ tag: p.type, value: p.value })
     }
     for (const e of state.emails) {
-      if (e.enabled && e.value)
-        fields.push({ tag: e.type, value: e.value })
+      if (e.enabled && e.value) fields.push({ tag: e.type, value: e.value })
     }
     for (const w of state.websites) {
-      if (w.enabled && w.value)
-        fields.push({ tag: w.type, value: w.value })
+      if (w.enabled && w.value) fields.push({ tag: w.type, value: w.value })
     }
     for (const a of state.addresses) {
       if (!a.enabled) continue
       const parts = [a.street, a.city, a.state, a.zip, a.country].filter(Boolean)
-      if (parts.length > 0)
-        fields.push({ tag: a.type, value: parts.join(', ') })
+      if (parts.length > 0) fields.push({ tag: a.type, value: parts.join(', ') })
     }
     for (const s of state.socials) {
-      if (s.enabled && s.value)
-        fields.push({ tag: s.platform, value: s.value })
+      if (s.enabled && s.value) fields.push({ tag: s.platform, value: s.value })
     }
     if (state.pronouns.enabled && state.pronouns.value)
       fields.push({ tag: 'Pronouns', value: state.pronouns.value })
@@ -76,8 +71,7 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
     if (state.emergencyContact.enabled && state.emergencyContact.value)
       fields.push({ tag: 'ICE', value: state.emergencyContact.value })
     for (const cf of state.customFields) {
-      if (cf.enabled && cf.label && cf.value)
-        fields.push({ tag: cf.label, value: cf.value })
+      if (cf.enabled && cf.label && cf.value) fields.push({ tag: cf.label, value: cf.value })
     }
 
     return fields
@@ -128,9 +122,7 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
       <div
         ref={cardRef}
         className={`text-white flex overflow-hidden ${
-          isHorizontal
-            ? 'aspect-[2/1] flex-row p-6 sm:p-8 gap-6'
-            : 'aspect-[1/1.5] flex-col gap-6'
+          isHorizontal ? 'aspect-[2/1] flex-row p-6 sm:p-8 gap-6' : 'aspect-[1/1.5] flex-col gap-6'
         }`}
         style={{ fontFamily: "'JetBrains Mono Variable', monospace", backgroundColor: accentColor }}
       >
@@ -139,9 +131,7 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
             {/* Horizontal: text left, QR right */}
             <div className="flex flex-col gap-2 flex-1 min-w-0 min-h-0 overflow-hidden">
               <h2 className="font-bold leading-tight tracking-tight text-white shrink-0 text-xl sm:text-2xl">
-                {displayName || (
-                  <span className="opacity-30 italic text-lg">Your Name</span>
-                )}
+                {displayName || <span className="opacity-30 italic text-lg">Your Name</span>}
               </h2>
               {subtitleParts.length > 0 && (
                 <p className="text-[13px] text-white/50 leading-snug shrink-0">
@@ -152,7 +142,9 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
                 <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 mt-1 min-h-0 overflow-hidden text-[13px] leading-snug">
                   {enabledFields.map((f, i) => (
                     <React.Fragment key={i}>
-                      <span className="text-white/40 uppercase tracking-wider shrink-0">{f.tag}</span>
+                      <span className="text-white/40 uppercase tracking-wider shrink-0">
+                        {f.tag}
+                      </span>
                       <span className="text-white/90 break-words min-w-0">{f.value}</span>
                     </React.Fragment>
                   ))}
@@ -161,10 +153,21 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
             </div>
             <div className="shrink-0 flex items-end justify-end">
               {hasContent ? (
-                <QRCodeSVG value={vcardString} size={100} level="M" bgColor={accentColor} fgColor="#ffffff" />
+                <QRCodeSVG
+                  value={vcardString}
+                  size={100}
+                  level="M"
+                  bgColor={accentColor}
+                  fgColor="#ffffff"
+                />
               ) : (
-                <div className="border border-white/10 flex items-center justify-center" style={{ width: 100, height: 100 }}>
-                  <span className="text-[9px] text-white/20 text-center leading-tight">QR code</span>
+                <div
+                  className="border border-white/10 flex items-center justify-center"
+                  style={{ width: 100, height: 100 }}
+                >
+                  <span className="text-[9px] text-white/20 text-center leading-tight">
+                    QR code
+                  </span>
                 </div>
               )}
             </div>
@@ -174,9 +177,7 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
             {/* Vertical: text top-left, QR bottom-right */}
             <div className="flex-1 flex flex-col gap-2 min-h-0 overflow-hidden p-6 sm:p-8">
               <h2 className="font-bold leading-tight tracking-tight text-white shrink-0 text-2xl sm:text-3xl">
-                {displayName || (
-                  <span className="opacity-30 italic text-lg">Your Name</span>
-                )}
+                {displayName || <span className="opacity-30 italic text-lg">Your Name</span>}
               </h2>
               {subtitleParts.length > 0 && (
                 <p className="text-[13px] text-white/50 leading-snug shrink-0">
@@ -187,7 +188,9 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
                 <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 mt-1 min-h-0 overflow-hidden text-[13px] leading-snug">
                   {enabledFields.map((f, i) => (
                     <React.Fragment key={i}>
-                      <span className="text-white/40 uppercase tracking-wider shrink-0">{f.tag}</span>
+                      <span className="text-white/40 uppercase tracking-wider shrink-0">
+                        {f.tag}
+                      </span>
                       <span className="text-white/90 break-words min-w-0">{f.value}</span>
                     </React.Fragment>
                   ))}
@@ -196,10 +199,21 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
               <div className="flex-1" />
               <div className="shrink-0 flex justify-end">
                 {hasContent ? (
-                  <QRCodeSVG value={vcardString} size={210} level="M" bgColor={accentColor} fgColor="#ffffff" />
+                  <QRCodeSVG
+                    value={vcardString}
+                    size={210}
+                    level="M"
+                    bgColor={accentColor}
+                    fgColor="#ffffff"
+                  />
                 ) : (
-                  <div className="border border-white/10 flex items-center justify-center" style={{ width: 140, height: 140 }}>
-                    <span className="text-[9px] text-white/20 text-center leading-tight">QR code</span>
+                  <div
+                    className="border border-white/10 flex items-center justify-center"
+                    style={{ width: 140, height: 140 }}
+                  >
+                    <span className="text-[9px] text-white/20 text-center leading-tight">
+                      QR code
+                    </span>
                   </div>
                 )}
               </div>
