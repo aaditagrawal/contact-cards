@@ -2,10 +2,15 @@ import { useState, useEffect, useCallback } from 'react'
 
 export type Theme = 'light' | 'dark' | 'system'
 
+/** Decode the persisted `theme` entry, falling back when storage holds anything else. */
+function parseTheme(value: string | null): Theme {
+  return value === 'light' || value === 'dark' || value === 'system' ? value : 'system'
+}
+
 export function useTheme() {
   const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window === 'undefined') return 'system'
-    return (localStorage.getItem('theme') as Theme) ?? 'system'
+    if (import.meta.env.SSR) return 'system'
+    return parseTheme(localStorage.getItem('theme'))
   })
 
   const setTheme = useCallback((t: Theme) => {
