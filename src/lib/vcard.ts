@@ -1,18 +1,22 @@
 import type { ContactState } from './contact-types'
 
+// Labels are free-form user input, so this is a genuine string-keyed lookup with a
+// fallback. `Map.get` reports the miss as `undefined` instead of an index signature
+// pretending every label resolves.
+const VCARD_TYPE_BY_LABEL = new Map([
+  ['Mobile', 'CELL'],
+  ['Home', 'HOME'],
+  ['Work', 'WORK'],
+  ['Main', 'MAIN'],
+  ['Work Fax', 'WORK,FAX'],
+  ['Home Fax', 'HOME,FAX'],
+  ['Pager', 'PAGER'],
+  ['Personal', 'HOME'],
+  ['Other', 'OTHER'],
+])
+
 function vcardTypeMap(label: string): string {
-  const map: Record<string, string> = {
-    Mobile: 'CELL',
-    Home: 'HOME',
-    Work: 'WORK',
-    Main: 'MAIN',
-    'Work Fax': 'WORK,FAX',
-    'Home Fax': 'HOME,FAX',
-    Pager: 'PAGER',
-    Personal: 'HOME',
-    Other: 'OTHER',
-  }
-  return map[label] ?? 'OTHER'
+  return VCARD_TYPE_BY_LABEL.get(label) ?? 'OTHER'
 }
 
 function socialUrl(platform: string, handle: string): string {
@@ -21,18 +25,29 @@ function socialUrl(platform: string, handle: string): string {
     return handle
   }
   const clean = handle.replace(/^@/, '')
-  const prefixes: Record<string, string> = {
-    LinkedIn: `https://linkedin.com/in/${clean}`,
-    'X (Twitter)': `https://x.com/${clean}`,
-    GitHub: `https://github.com/${clean}`,
-    Instagram: `https://instagram.com/${clean}`,
-    Facebook: `https://facebook.com/${clean}`,
-    YouTube: `https://youtube.com/@${clean}`,
-    TikTok: `https://tiktok.com/@${clean}`,
-    Mastodon: handle, // Mastodon handles are full URLs or user@instance
-    Bluesky: `https://bsky.app/profile/${clean}`,
+  switch (platform) {
+    case 'LinkedIn':
+      return `https://linkedin.com/in/${clean}`
+    case 'X (Twitter)':
+      return `https://x.com/${clean}`
+    case 'GitHub':
+      return `https://github.com/${clean}`
+    case 'Instagram':
+      return `https://instagram.com/${clean}`
+    case 'Facebook':
+      return `https://facebook.com/${clean}`
+    case 'YouTube':
+      return `https://youtube.com/@${clean}`
+    case 'TikTok':
+      return `https://tiktok.com/@${clean}`
+    // Mastodon handles are full URLs or user@instance
+    case 'Mastodon':
+      return handle
+    case 'Bluesky':
+      return `https://bsky.app/profile/${clean}`
+    default:
+      return handle
   }
-  return prefixes[platform] ?? handle
 }
 
 export function generateVCard(contact: ContactState): string {
