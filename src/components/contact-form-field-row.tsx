@@ -1,3 +1,4 @@
+import { classNames } from '@/ui.stylex'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -26,8 +27,8 @@ export function SimpleFieldRow({
   const id = `field-${label.toLowerCase().replace(/\s+/g, '-')}`
 
   return (
-    <div className="flex items-start gap-3">
-      <div className="flex items-center pt-2">
+    <div className={classNames.contactFormCustomFields24}>
+      <div className={classNames.contactFormCustomFields25}>
         <Checkbox
           id={`${id}-toggle`}
           checked={enabled}
@@ -35,9 +36,12 @@ export function SimpleFieldRow({
         />
       </div>
       <div
-        className={cn('flex flex-1 flex-col gap-1 transition-opacity', !enabled && 'opacity-40')}
+        className={cn(
+          classNames.contactFormFieldRow30,
+          !enabled && classNames.contactFormCustomFields27,
+        )}
       >
-        <Label htmlFor={id} className="text-xs">
+        <Label htmlFor={id} className={classNames.contactFormFieldRow31}>
           {label}
         </Label>
         {type === 'textarea' ? (

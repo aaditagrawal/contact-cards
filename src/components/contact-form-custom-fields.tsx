@@ -1,3 +1,4 @@
+import { classNames } from '@/ui.stylex'
 import { IconPlus, IconX } from '@tabler/icons-react'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -12,10 +13,10 @@ interface ContactFormCustomFieldsProps {
 
 export function ContactFormCustomFields({ fields, dispatch }: ContactFormCustomFieldsProps) {
   return (
-    <div className="flex flex-col gap-3">
+    <div className={classNames.contactFormCustomFields23}>
       {fields.map((cf) => (
-        <div key={cf.id} className="flex items-start gap-3">
-          <div className="flex items-center pt-2">
+        <div key={cf.id} className={classNames.contactFormCustomFields24}>
+          <div className={classNames.contactFormCustomFields25}>
             <Checkbox
               checked={cf.enabled}
               onCheckedChange={(checked) =>
@@ -28,8 +29,8 @@ export function ContactFormCustomFields({ fields, dispatch }: ContactFormCustomF
           </div>
           <div
             className={cn(
-              'grid flex-1 grid-cols-2 gap-2 transition-opacity',
-              !cf.enabled && 'opacity-40',
+              classNames.contactFormCustomFields26,
+              !cf.enabled && classNames.contactFormCustomFields27,
             )}
           >
             <Input
@@ -58,10 +59,10 @@ export function ContactFormCustomFields({ fields, dispatch }: ContactFormCustomF
           <Button
             variant="ghost"
             size="icon-xs"
-            className="mt-1"
+            className={classNames.contactFormCustomFields28}
             onClick={() => dispatch({ type: 'REMOVE_CUSTOM_FIELD', payload: cf.id })}
           >
-            <IconX className="size-3" />
+            <IconX data-stylex-sized="" className={classNames.cardPreview2} />
           </Button>
         </div>
       ))}
@@ -69,9 +70,9 @@ export function ContactFormCustomFields({ fields, dispatch }: ContactFormCustomF
         variant="outline"
         size="sm"
         onClick={() => dispatch({ type: 'ADD_CUSTOM_FIELD' })}
-        className="w-fit"
+        className={classNames.contactFormCustomFields29}
       >
-        <IconPlus className="size-3" />
+        <IconPlus data-stylex-sized="" className={classNames.cardPreview2} />
         Add Field
       </Button>
     </div>

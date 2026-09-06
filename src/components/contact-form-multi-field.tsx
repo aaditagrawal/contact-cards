@@ -1,3 +1,4 @@
+import { classNames } from '@/ui.stylex'
 import { IconPlus, IconX } from '@tabler/icons-react'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -30,10 +31,10 @@ export function MultiFieldSection({
   dispatch,
 }: MultiFieldSectionProps) {
   return (
-    <div className="flex flex-col gap-3">
+    <div className={classNames.contactFormCustomFields23}>
       {entries.map((entry) => (
-        <div key={entry.id} className="flex items-start gap-3">
-          <div className="flex items-center pt-2">
+        <div key={entry.id} className={classNames.contactFormCustomFields24}>
+          <div className={classNames.contactFormCustomFields25}>
             <Checkbox
               checked={entry.enabled}
               onCheckedChange={(checked) =>
@@ -46,8 +47,8 @@ export function MultiFieldSection({
           </div>
           <div
             className={cn(
-              'flex flex-1 items-start gap-2 transition-opacity',
-              !entry.enabled && 'opacity-40',
+              classNames.contactFormMultiField32,
+              !entry.enabled && classNames.contactFormCustomFields27,
             )}
           >
             <Select
@@ -60,7 +61,7 @@ export function MultiFieldSection({
               }
               disabled={!entry.enabled}
             >
-              <SelectTrigger size="sm" className="w-[100px] shrink-0">
+              <SelectTrigger size="sm" className={classNames.contactFormMultiField33}>
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -88,7 +89,7 @@ export function MultiFieldSection({
             <Button
               variant="ghost"
               size="icon-xs"
-              className="mt-1 shrink-0"
+              className={classNames.contactFormMultiField34}
               onClick={() =>
                 dispatch({
                   type: 'REMOVE_MULTI_ENTRY',
@@ -96,7 +97,7 @@ export function MultiFieldSection({
                 })
               }
             >
-              <IconX className="size-3" />
+              <IconX data-stylex-sized="" className={classNames.cardPreview2} />
             </Button>
           )}
         </div>
@@ -110,9 +111,9 @@ export function MultiFieldSection({
             payload: { field, entryType: typeOptions[0] },
           })
         }
-        className="w-fit"
+        className={classNames.contactFormCustomFields29}
       >
-        <IconPlus className="size-3" />
+        <IconPlus data-stylex-sized="" className={classNames.cardPreview2} />
         Add
       </Button>
     </div>
