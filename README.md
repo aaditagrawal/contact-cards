@@ -19,7 +19,7 @@ Oh, and I really wanted to try Tanstack Start.
 
 - [React 19](https://react.dev) + [TypeScript](https://www.typescriptlang.org)
 - [TanStack Start](https://tanstack.com/start) + [TanStack Router](https://tanstack.com/router)
-- [Tailwind CSS 4](https://tailwindcss.com) + [shadcn/ui](https://ui.shadcn.com)
+- [StyleX](https://stylexjs.com) + ported shadcn/ui components
 - [qrcode.react](https://github.com/zpao/qrcode.react) for QR code rendering
 - [html-to-image](https://github.com/bubkoo/html-to-image) for PNG export
 - [Tabler Icons](https://tabler.io/icons) for iconography

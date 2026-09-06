@@ -1,3 +1,4 @@
+import { classNames } from '@/ui.stylex'
 import * as React from 'react'
 import { Separator as SeparatorPrimitive } from 'radix-ui'
 
@@ -14,10 +15,7 @@ function Separator({
       data-slot="separator"
       decorative={decorative}
       orientation={orientation}
-      className={cn(
-        'bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch',
-        className,
-      )}
+      className={cn(classNames.separator156, className)}
       {...props}
     />
   )
