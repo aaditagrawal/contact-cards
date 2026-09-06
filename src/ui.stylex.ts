@@ -453,7 +453,12 @@ export const styles = stylex.create({
   },
   // Original utility group: bg-destructive/10 [a]:hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive dark:bg-destructive/20
   badge58: {
-    backgroundColor: 'var(--destructive)',
+    // Preserve the original opaque fallback; supported browsers use 10% opacity.
+    backgroundColor: {
+      default: 'var(--destructive)',
+      '@supports (color: color-mix(in lab, red, red))':
+        'color-mix(in oklab, var(--destructive) 10%, transparent)',
+    },
     color: 'var(--destructive)',
   },
   // Original utility group: border-border text-foreground [a]:hover:bg-muted [a]:hover:text-muted-foreground
@@ -507,7 +512,12 @@ export const styles = stylex.create({
   button65: {},
   // Original utility group: bg-destructive/10 hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/20 text-destructive focus-visible:border-destructive/40 dark:hover:bg-destructive/30
   button66: {
-    backgroundColor: 'var(--destructive)',
+    // Preserve the original opaque fallback; supported browsers use 10% opacity.
+    backgroundColor: {
+      default: 'var(--destructive)',
+      '@supports (color: color-mix(in lab, red, red))':
+        'color-mix(in oklab, var(--destructive) 10%, transparent)',
+    },
     color: 'var(--destructive)',
   },
   // Original utility group: h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2

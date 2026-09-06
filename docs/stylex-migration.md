@@ -14,6 +14,7 @@ Vite compiles the StyleX module using Babel; PostCSS extracts the same configura
 - Initial system-theme screen: 239 nodes at 375, 768, and 1440 pixels.
 - Light theme, dark theme, populated name fields, and expanded address/social/custom fields with portrait orientation and Ocean color: mobile and desktop comparisons match, up to 291 nodes.
 - Open select menu with its first option focused: all 324 nodes match at desktop size. The populated portrait screenshot with the menu closed is byte-identical.
+- A temporary fixture (removed before commit) verifies all 48 button variant/size combinations, six badge variants, and Field/InputGroup controls: 223 nodes match computed CSS, geometry, text, and semantic ARIA/state attributes at mobile/desktop sizes in both themes. Disabled/invalid/expanded controls and focused InputGroup input also match.
 - Development mode matches all 236 application nodes against the original production page after hydration. The comparison normalizes equivalent unused background-position zero serialization caused by production CSS minification.
 
-Uncompressed production CSS changes from 75.10 kB to 72.49 kB; route JavaScript changes from 202.89 kB to 217.11 kB (gzip 63.18 kB to 62.06 kB). This PR is a styling migration, not a performance claim.
+Uncompressed production CSS changes from 75.10 kB to 73.03 kB; route JavaScript changes from 202.89 kB to 217.15 kB (gzip 63.18 kB to 62.07 kB). This PR is a styling migration, not a performance claim.
