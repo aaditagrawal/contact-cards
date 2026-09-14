@@ -123,7 +123,7 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
         className={`${classNames.cardPreview6} ${
           isHorizontal ? classNames.cardPreview4 : classNames.cardPreview5
         }`}
-        style={{ fontFamily: "'JetBrains Mono Variable', monospace", backgroundColor: accentColor }}
+        style={{ '--card-accent': accentColor }}
       >
         {isHorizontal ? (
           <>
@@ -156,7 +156,7 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
                   fgColor="#ffffff"
                 />
               ) : (
-                <div className={classNames.cardPreview15} style={{ width: 100, height: 100 }}>
+                <div className={classNames.cardPreview15} style={{ '--qr-size': 100 }}>
                   <span className={classNames.cardPreview16}>QR code</span>
                 </div>
               )}
@@ -193,7 +193,7 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
                     fgColor="#ffffff"
                   />
                 ) : (
-                  <div className={classNames.cardPreview15} style={{ width: 140, height: 140 }}>
+                  <div className={classNames.cardPreview15} style={{ '--qr-size': 140 }}>
                     <span className={classNames.cardPreview16}>QR code</span>
                   </div>
                 )}

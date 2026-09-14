@@ -13,6 +13,7 @@
     "vitest"
   ],
   "jsPlugins": [
+    "@shadcn/lint",
     {
       "name": "anti-slop",
       "specifier": "./tools/oxlint/anti-slop/index.ts"
@@ -82,6 +83,42 @@
     "typescript/no-explicit-any": "warn",
     "typescript/no-non-null-assertion": "warn",
     "import/no-default-export": "off",
+    "shadcn/no-restyle": [
+      "error",
+      {
+        "allow": [
+          "layout"
+        ]
+      }
+    ],
+    "shadcn/no-raw-colors": "error",
+    "shadcn/no-arbitrary-values": [
+      "error",
+      {
+        "allow": [
+          "tracking-[*]",
+          "leading-[*]",
+          "text-[clamp(*]",
+          "text-[*em]",
+          "text-[11px]",
+          "text-[13px]",
+          "grid-cols-[*]",
+          "w-[*%]",
+          "min-w-[*%]",
+          "max-w-[*%]",
+          "h-[*%]",
+          "w-[*em]",
+          "h-[*em]",
+          "translate-x-[*em]",
+          "translate-y-[*em]",
+          "min-h-[*svh]",
+          "max-h-[*svh]"
+        ]
+      }
+    ],
+    "shadcn/no-inline-styles": "error",
+    "shadcn/no-unknown-classes": "error",
+    "shadcn/require-static-classes": "error",
     "anti-slop/no-chained-type-assertions": "error",
     "anti-slop/no-conditional-empty-object-spread": "error",
     "anti-slop/no-known-value-widening": "error",
@@ -170,7 +207,23 @@
         "react-perf/jsx-no-new-array-as-prop": "off",
         "react-perf/jsx-no-new-function-as-prop": "off",
         "jsx-a11y/click-events-have-key-events": "off",
-        "jsx-a11y/interactive-supports-focus": "off"
+        "jsx-a11y/interactive-supports-focus": "off",
+        "shadcn/no-restyle": "off",
+        "shadcn/no-arbitrary-values": "off",
+        "shadcn/require-static-classes": "off"
+      }
+    },
+    {
+      "files": [
+        "src/components/card-preview.tsx",
+        "src/components/contact-form.tsx",
+        "src/components/contact-form-custom-fields.tsx",
+        "src/components/contact-form-field-row.tsx",
+        "src/components/contact-form-multi-field.tsx",
+        "src/routes/index.tsx"
+      ],
+      "rules": {
+        "shadcn/require-static-classes": "off"
       }
     }
   ]
