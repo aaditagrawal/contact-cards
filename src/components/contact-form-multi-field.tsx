@@ -60,7 +60,7 @@ export function MultiFieldSection({
               }
               disabled={!entry.enabled}
             >
-              <SelectTrigger size="sm" className="w-[100px] shrink-0">
+              <SelectTrigger size="sm" className="w-25 shrink-0">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>

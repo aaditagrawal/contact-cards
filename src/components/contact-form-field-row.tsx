@@ -37,7 +37,7 @@ export function SimpleFieldRow({
       <div
         className={cn('flex flex-1 flex-col gap-1 transition-opacity', !enabled && 'opacity-40')}
       >
-        <Label htmlFor={id} className="text-xs">
+        <Label htmlFor={id}>
           {label}
         </Label>
         {type === 'textarea' ? (
