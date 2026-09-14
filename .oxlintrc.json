@@ -92,7 +92,30 @@
       }
     ],
     "shadcn/no-raw-colors": "error",
-    "shadcn/no-arbitrary-values": "error",
+    "shadcn/no-arbitrary-values": [
+      "error",
+      {
+        "allow": [
+          "tracking-[*]",
+          "leading-[*]",
+          "text-[clamp(*]",
+          "text-[*em]",
+          "text-[11px]",
+          "text-[13px]",
+          "grid-cols-[*]",
+          "w-[*%]",
+          "min-w-[*%]",
+          "max-w-[*%]",
+          "h-[*%]",
+          "w-[*em]",
+          "h-[*em]",
+          "translate-x-[*em]",
+          "translate-y-[*em]",
+          "min-h-[*svh]",
+          "max-h-[*svh]"
+        ]
+      }
+    ],
     "shadcn/no-inline-styles": "error",
     "shadcn/no-unknown-classes": "error",
     "shadcn/require-static-classes": "error",
