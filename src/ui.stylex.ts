@@ -49,6 +49,8 @@ export const styles = stylex.create({
     display: 'flex',
     overflow: 'hidden',
     color: 'var(--color-white)',
+    fontFamily: "'JetBrains Mono Variable', monospace",
+    backgroundColor: 'var(--card-accent)',
   },
   // Original utility group: flex flex-col gap-2 flex-1 min-w-0 min-h-0 overflow-hidden
   cardPreview7: {
@@ -127,6 +129,8 @@ export const styles = stylex.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    width: 'var(--qr-size)',
+    height: 'var(--qr-size)',
     borderStyle: 'var(--tw-border-style)',
     borderWidth: '1px',
     borderColor: '#ffffff1a',
@@ -1553,6 +1557,7 @@ export const styles = stylex.create({
   index176: {
     width: 'calc(var(--spacing) * 5)',
     height: 'calc(var(--spacing) * 5)',
+    backgroundColor: 'var(--swatch-bg)',
     borderStyle: 'var(--tw-border-style)',
     borderWidth: '1px',
     transitionProperty: 'all',

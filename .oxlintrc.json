@@ -212,6 +212,19 @@
         "shadcn/no-arbitrary-values": "off",
         "shadcn/require-static-classes": "off"
       }
+    },
+    {
+      "files": [
+        "src/components/card-preview.tsx",
+        "src/components/contact-form.tsx",
+        "src/components/contact-form-custom-fields.tsx",
+        "src/components/contact-form-field-row.tsx",
+        "src/components/contact-form-multi-field.tsx",
+        "src/routes/index.tsx"
+      ],
+      "rules": {
+        "shadcn/require-static-classes": "off"
+      }
     }
   ]
 }

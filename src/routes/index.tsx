@@ -68,7 +68,7 @@ function ContactCardPage() {
                   className={`${classNames.index176} ${
                     accentColor === color.value ? classNames.index174 : classNames.index175
                   }`}
-                  style={{ backgroundColor: color.value }}
+                  style={{ '--swatch-bg': color.value }}
                 />
               ))}
             </div>
