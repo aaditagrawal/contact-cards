@@ -1,3 +1,4 @@
+import { classNames } from '@/ui.stylex'
 import { useReducer, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { IconId } from '@tabler/icons-react'
@@ -28,47 +29,44 @@ function ContactCardPage() {
   const [accentColor, setAccentColor] = useState<string>(ACCENT_COLORS[0].value)
 
   return (
-    <div className="bg-background min-h-screen flex flex-col">
-      <header className="border-b shrink-0">
-        <div className="mx-auto w-full max-w-5xl px-4 md:px-6 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <IconId className="size-4 text-primary" />
-            <h1 className="text-xs font-semibold uppercase tracking-wider">Contact Cards</h1>
+    <div className={classNames.index160}>
+      <header className={classNames.index161}>
+        <div className={classNames.index162}>
+          <div className={classNames.cardPreview1}>
+            <IconId data-stylex-sized="" className={classNames.index163} />
+            <h1 className={classNames.index164}>Contact Cards</h1>
           </div>
           <ThemeToggle theme={theme} setTheme={setTheme} />
         </div>
       </header>
 
-      <div className="mx-auto w-full max-w-5xl p-4 md:p-6 pb-0 md:pb-0">
-        <p className="text-sm text-muted-foreground max-w-xl">
+      <div className={classNames.index165}>
+        <p className={classNames.index166}>
           Build a contact card, toggle the fields you want, and download it as a PNG with an
           embedded QR code. Anyone can scan it with their camera app to save your info.
         </p>
       </div>
 
-      <div className="mx-auto w-full max-w-5xl flex-1 grid md:grid-cols-2 gap-6 p-4 md:p-6">
-        <ScrollArea className="md:h-[calc(100vh-4rem)]">
-          <div className="pr-4">
+      <div className={classNames.index167}>
+        <ScrollArea className={classNames.index168}>
+          <div className={classNames.index169}>
             <ContactForm state={state} dispatch={dispatch} />
           </div>
         </ScrollArea>
-        <div className="md:sticky md:top-6 md:self-start flex flex-col gap-4">
+        <div className={classNames.index170}>
           <CardPreview state={state} accentColor={accentColor} />
-          <div className="flex flex-col gap-2">
-            <span className="text-[10px] text-muted-foreground uppercase tracking-wider">
-              Card Color
-            </span>
-            <div className="flex items-center gap-1.5">
+          <div className={classNames.index171}>
+            <span className={classNames.index172}>Card Color</span>
+            <div className={classNames.index173}>
               {ACCENT_COLORS.map((color) => (
                 <button
                   key={color.value}
                   type="button"
                   title={color.name}
                   onClick={() => setAccentColor(color.value)}
-                  className={`size-5 border transition-all ${
-                    accentColor === color.value
-                      ? 'ring-2 ring-primary ring-offset-1 ring-offset-background scale-110'
-                      : 'border-border hover:scale-110'
+                  data-stylex-sized=""
+                  className={`${classNames.index176} ${
+                    accentColor === color.value ? classNames.index174 : classNames.index175
                   }`}
                   style={{ backgroundColor: color.value }}
                 />

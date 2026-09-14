@@ -1,3 +1,4 @@
+import { classNames } from '@/ui.stylex'
 import React, { useRef, useMemo, useCallback, useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
 import { toPng } from 'html-to-image'
@@ -96,62 +97,56 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
   const isHorizontal = orientation === 'horizontal'
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className={classNames.cardPreview0}>
       {/* Orientation toggle */}
-      <div className="flex items-center gap-2">
+      <div className={classNames.cardPreview1}>
         <Button
           variant={isHorizontal ? 'default' : 'outline'}
           size="icon-xs"
           onClick={() => setOrientation('horizontal')}
         >
-          <IconRectangle className="size-3" />
+          <IconRectangle data-stylex-sized="" className={classNames.cardPreview2} />
         </Button>
         <Button
           variant={!isHorizontal ? 'default' : 'outline'}
           size="icon-xs"
           onClick={() => setOrientation('vertical')}
         >
-          <IconRectangleVertical className="size-3" />
+          <IconRectangleVertical data-stylex-sized="" className={classNames.cardPreview2} />
         </Button>
-        <span className="text-[10px] text-muted-foreground ml-1">
-          {isHorizontal ? 'Landscape' : 'Portrait'}
-        </span>
+        <span className={classNames.cardPreview3}>{isHorizontal ? 'Landscape' : 'Portrait'}</span>
       </div>
 
       {/* The card */}
       <div
         ref={cardRef}
-        className={`text-white flex overflow-hidden ${
-          isHorizontal ? 'aspect-[2/1] flex-row p-6 sm:p-8 gap-6' : 'aspect-[1/1.5] flex-col gap-6'
+        className={`${classNames.cardPreview6} ${
+          isHorizontal ? classNames.cardPreview4 : classNames.cardPreview5
         }`}
         style={{ fontFamily: "'JetBrains Mono Variable', monospace", backgroundColor: accentColor }}
       >
         {isHorizontal ? (
           <>
             {/* Horizontal: text left, QR right */}
-            <div className="flex flex-col gap-2 flex-1 min-w-0 min-h-0 overflow-hidden">
-              <h2 className="font-bold leading-tight tracking-tight text-white shrink-0 text-xl sm:text-2xl">
-                {displayName || <span className="opacity-30 italic text-lg">Your Name</span>}
+            <div className={classNames.cardPreview7}>
+              <h2 className={classNames.cardPreview8}>
+                {displayName || <span className={classNames.cardPreview9}>Your Name</span>}
               </h2>
               {subtitleParts.length > 0 && (
-                <p className="text-[13px] text-white/50 leading-snug shrink-0">
-                  {subtitleParts.join(' / ')}
-                </p>
+                <p className={classNames.cardPreview10}>{subtitleParts.join(' / ')}</p>
               )}
               {enabledFields.length > 0 && (
-                <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 mt-1 min-h-0 overflow-hidden text-[13px] leading-snug">
+                <div className={classNames.cardPreview11}>
                   {enabledFields.map((f, i) => (
                     <React.Fragment key={i}>
-                      <span className="text-white/40 uppercase tracking-wider shrink-0">
-                        {f.tag}
-                      </span>
-                      <span className="text-white/90 break-words min-w-0">{f.value}</span>
+                      <span className={classNames.cardPreview12}>{f.tag}</span>
+                      <span className={classNames.cardPreview13}>{f.value}</span>
                     </React.Fragment>
                   ))}
                 </div>
               )}
             </div>
-            <div className="shrink-0 flex items-end justify-end">
+            <div className={classNames.cardPreview14}>
               {hasContent ? (
                 <QRCodeSVG
                   value={vcardString}
@@ -161,13 +156,8 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
                   fgColor="#ffffff"
                 />
               ) : (
-                <div
-                  className="border border-white/10 flex items-center justify-center"
-                  style={{ width: 100, height: 100 }}
-                >
-                  <span className="text-[9px] text-white/20 text-center leading-tight">
-                    QR code
-                  </span>
+                <div className={classNames.cardPreview15} style={{ width: 100, height: 100 }}>
+                  <span className={classNames.cardPreview16}>QR code</span>
                 </div>
               )}
             </div>
@@ -175,29 +165,25 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
         ) : (
           <>
             {/* Vertical: text top-left, QR bottom-right */}
-            <div className="flex-1 flex flex-col gap-2 min-h-0 overflow-hidden p-6 sm:p-8">
-              <h2 className="font-bold leading-tight tracking-tight text-white shrink-0 text-2xl sm:text-3xl">
-                {displayName || <span className="opacity-30 italic text-lg">Your Name</span>}
+            <div className={classNames.cardPreview17}>
+              <h2 className={classNames.cardPreview18}>
+                {displayName || <span className={classNames.cardPreview9}>Your Name</span>}
               </h2>
               {subtitleParts.length > 0 && (
-                <p className="text-[13px] text-white/50 leading-snug shrink-0">
-                  {subtitleParts.join(' / ')}
-                </p>
+                <p className={classNames.cardPreview10}>{subtitleParts.join(' / ')}</p>
               )}
               {enabledFields.length > 0 && (
-                <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 mt-1 min-h-0 overflow-hidden text-[13px] leading-snug">
+                <div className={classNames.cardPreview11}>
                   {enabledFields.map((f, i) => (
                     <React.Fragment key={i}>
-                      <span className="text-white/40 uppercase tracking-wider shrink-0">
-                        {f.tag}
-                      </span>
-                      <span className="text-white/90 break-words min-w-0">{f.value}</span>
+                      <span className={classNames.cardPreview12}>{f.tag}</span>
+                      <span className={classNames.cardPreview13}>{f.value}</span>
                     </React.Fragment>
                   ))}
                 </div>
               )}
-              <div className="flex-1" />
-              <div className="shrink-0 flex justify-end">
+              <div className={classNames.cardPreview19} />
+              <div className={classNames.cardPreview20}>
                 {hasContent ? (
                   <QRCodeSVG
                     value={vcardString}
@@ -207,13 +193,8 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
                     fgColor="#ffffff"
                   />
                 ) : (
-                  <div
-                    className="border border-white/10 flex items-center justify-center"
-                    style={{ width: 140, height: 140 }}
-                  >
-                    <span className="text-[9px] text-white/20 text-center leading-tight">
-                      QR code
-                    </span>
+                  <div className={classNames.cardPreview15} style={{ width: 140, height: 140 }}>
+                    <span className={classNames.cardPreview16}>QR code</span>
                   </div>
                 )}
               </div>
@@ -223,8 +204,8 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
       </div>
 
       {/* Download button */}
-      <Button onClick={downloadAsPng} disabled={!hasContent} className="w-full">
-        <IconDownload className="size-3.5" />
+      <Button onClick={downloadAsPng} disabled={!hasContent} className={classNames.cardPreview21}>
+        <IconDownload data-stylex-sized="" className={classNames.cardPreview22} />
         Download PNG
       </Button>
     </div>

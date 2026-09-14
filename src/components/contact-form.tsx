@@ -1,3 +1,4 @@
+import { classNames } from '@/ui.stylex'
 import { IconPlus, IconX } from '@tabler/icons-react'
 import { Switch } from '@/components/ui/switch'
 import { Label } from '@/components/ui/label'
@@ -56,24 +57,24 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
   }
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className={classNames.contactForm35}>
       {/* Name Section */}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Name</h2>
-        <div className="flex items-center gap-3">
+      <section className={classNames.cardPreview0}>
+        <h2 className={classNames.contactForm36}>Name</h2>
+        <div className={classNames.contactForm37}>
           <Switch
             id="use-alias"
             size="sm"
             checked={state.useAlias}
             onCheckedChange={(checked) => dispatch({ type: 'SET_USE_ALIAS', payload: checked })}
           />
-          <Label htmlFor="use-alias" className="text-xs">
+          <Label htmlFor="use-alias" className={classNames.contactFormFieldRow31}>
             Use alias instead of name
           </Label>
         </div>
         {state.useAlias ? (
-          <div className="flex flex-col gap-1">
-            <Label htmlFor="alias" className="text-xs">
+          <div className={classNames.contactForm38}>
+            <Label htmlFor="alias" className={classNames.contactFormFieldRow31}>
               Alias
             </Label>
             <Input
@@ -89,11 +90,11 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
             />
           </div>
         ) : (
-          <div className="flex flex-col gap-3">
+          <div className={classNames.contactFormCustomFields23}>
             {/* Prefix + Suffix row */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="flex flex-col gap-1">
-                <Label htmlFor="prefix" className="text-xs text-muted-foreground">
+            <div className={classNames.contactForm39}>
+              <div className={classNames.contactForm38}>
+                <Label htmlFor="prefix" className={classNames.contactForm40}>
                   Prefix
                 </Label>
                 <Input
@@ -108,8 +109,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                   }
                 />
               </div>
-              <div className="flex flex-col gap-1">
-                <Label htmlFor="suffix" className="text-xs text-muted-foreground">
+              <div className={classNames.contactForm38}>
+                <Label htmlFor="suffix" className={classNames.contactForm40}>
                   Suffix
                 </Label>
                 <Input
@@ -126,9 +127,9 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
               </div>
             </div>
             {/* First, Middle, Last */}
-            <div className="grid grid-cols-[1fr_0.6fr_1fr] gap-3">
-              <div className="flex flex-col gap-1">
-                <Label htmlFor="firstName" className="text-xs">
+            <div className={classNames.contactForm41}>
+              <div className={classNames.contactForm38}>
+                <Label htmlFor="firstName" className={classNames.contactFormFieldRow31}>
                   First
                 </Label>
                 <Input
@@ -143,8 +144,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                   }
                 />
               </div>
-              <div className="flex flex-col gap-1">
-                <Label htmlFor="middleName" className="text-xs text-muted-foreground">
+              <div className={classNames.contactForm38}>
+                <Label htmlFor="middleName" className={classNames.contactForm40}>
                   Middle
                 </Label>
                 <Input
@@ -159,8 +160,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                   }
                 />
               </div>
-              <div className="flex flex-col gap-1">
-                <Label htmlFor="lastName" className="text-xs">
+              <div className={classNames.contactForm38}>
+                <Label htmlFor="lastName" className={classNames.contactFormFieldRow31}>
                   Last
                 </Label>
                 <Input
@@ -183,10 +184,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
       <Separator />
 
       {/* Phone Numbers */}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-          Phone
-        </h2>
+      <section className={classNames.cardPreview0}>
+        <h2 className={classNames.contactForm36}>Phone</h2>
         <MultiFieldSection
           field="phones"
           entries={state.phones}
@@ -200,10 +199,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
       <Separator />
 
       {/* Email Addresses */}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-          Email
-        </h2>
+      <section className={classNames.cardPreview0}>
+        <h2 className={classNames.contactForm36}>Email</h2>
         <MultiFieldSection
           field="emails"
           entries={state.emails}
@@ -217,10 +214,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
       <Separator />
 
       {/* Websites */}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-          Website
-        </h2>
+      <section className={classNames.cardPreview0}>
+        <h2 className={classNames.contactForm36}>Website</h2>
         <MultiFieldSection
           field="websites"
           entries={state.websites}
@@ -234,10 +229,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
       <Separator />
 
       {/* Professional */}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-          Professional
-        </h2>
+      <section className={classNames.cardPreview0}>
+        <h2 className={classNames.contactForm36}>Professional</h2>
         {simpleRow('jobTitle', 'Job Title')}
         {simpleRow('company', 'Company')}
         {simpleRow('department', 'Department')}
@@ -246,13 +239,11 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
       <Separator />
 
       {/* Addresses */}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-          Address
-        </h2>
+      <section className={classNames.cardPreview0}>
+        <h2 className={classNames.contactForm36}>Address</h2>
         {state.addresses.map((addr) => (
-          <div key={addr.id} className="flex flex-col gap-3">
-            <div className="flex items-center gap-3">
+          <div key={addr.id} className={classNames.contactFormCustomFields23}>
+            <div className={classNames.contactForm37}>
               <Checkbox
                 checked={addr.enabled}
                 onCheckedChange={(checked) =>
@@ -272,7 +263,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 }
                 disabled={!addr.enabled}
               >
-                <SelectTrigger size="sm" className="w-[100px]">
+                <SelectTrigger size="sm" className={classNames.contactForm42}>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -283,20 +274,17 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                   ))}
                 </SelectContent>
               </Select>
-              <div className="flex-1" />
+              <div className={classNames.cardPreview19} />
               <Button
                 variant="ghost"
                 size="icon-xs"
                 onClick={() => dispatch({ type: 'REMOVE_ADDRESS', payload: addr.id })}
               >
-                <IconX className="size-3" />
+                <IconX data-stylex-sized="" className={classNames.cardPreview2} />
               </Button>
             </div>
             <div
-              className={cn(
-                'flex flex-col gap-2 pl-7 transition-opacity',
-                !addr.enabled && 'opacity-40 pointer-events-none',
-              )}
+              className={cn(classNames.contactForm43, !addr.enabled && classNames.contactForm44)}
             >
               <Input
                 placeholder="Street"
@@ -309,7 +297,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 }
                 disabled={!addr.enabled}
               />
-              <div className="grid grid-cols-2 gap-2">
+              <div className={classNames.contactForm45}>
                 <Input
                   placeholder="City"
                   value={addr.city}
@@ -333,7 +321,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                   disabled={!addr.enabled}
                 />
               </div>
-              <div className="grid grid-cols-2 gap-2">
+              <div className={classNames.contactForm45}>
                 <Input
                   placeholder="ZIP"
                   value={addr.zip}
@@ -359,7 +347,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
               </div>
             </div>
             {state.addresses.indexOf(addr) < state.addresses.length - 1 && (
-              <Separator className="mt-1" />
+              <Separator className={classNames.contactFormCustomFields28} />
             )}
           </div>
         ))}
@@ -367,9 +355,9 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
           variant="outline"
           size="sm"
           onClick={() => dispatch({ type: 'ADD_ADDRESS', payload: { entryType: 'Home' } })}
-          className="w-fit"
+          className={classNames.contactFormCustomFields29}
         >
-          <IconPlus className="size-3" />
+          <IconPlus data-stylex-sized="" className={classNames.cardPreview2} />
           Add Address
         </Button>
       </section>
@@ -377,13 +365,11 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
       <Separator />
 
       {/* Social Profiles */}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-          Social
-        </h2>
+      <section className={classNames.cardPreview0}>
+        <h2 className={classNames.contactForm36}>Social</h2>
         {state.socials.map((social) => (
-          <div key={social.id} className="flex items-start gap-3">
-            <div className="flex items-center pt-2">
+          <div key={social.id} className={classNames.contactFormCustomFields24}>
+            <div className={classNames.contactFormCustomFields25}>
               <Checkbox
                 checked={social.enabled}
                 onCheckedChange={(checked) =>
@@ -396,8 +382,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
             </div>
             <div
               className={cn(
-                'flex flex-1 items-start gap-2 transition-opacity',
-                !social.enabled && 'opacity-40',
+                classNames.contactFormMultiField32,
+                !social.enabled && classNames.contactFormCustomFields27,
               )}
             >
               <Select
@@ -410,7 +396,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 }
                 disabled={!social.enabled}
               >
-                <SelectTrigger size="sm" className="w-[120px] shrink-0">
+                <SelectTrigger size="sm" className={classNames.contactForm46}>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -436,10 +422,10 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
             <Button
               variant="ghost"
               size="icon-xs"
-              className="mt-1 shrink-0"
+              className={classNames.contactFormMultiField34}
               onClick={() => dispatch({ type: 'REMOVE_SOCIAL', payload: social.id })}
             >
-              <IconX className="size-3" />
+              <IconX data-stylex-sized="" className={classNames.cardPreview2} />
             </Button>
           </div>
         ))}
@@ -447,9 +433,9 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
           variant="outline"
           size="sm"
           onClick={() => dispatch({ type: 'ADD_SOCIAL', payload: { platform: 'LinkedIn' } })}
-          className="w-fit"
+          className={classNames.contactFormCustomFields29}
         >
-          <IconPlus className="size-3" />
+          <IconPlus data-stylex-sized="" className={classNames.cardPreview2} />
           Add Social
         </Button>
       </section>
@@ -457,10 +443,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
       <Separator />
 
       {/* Other */}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-          Other
-        </h2>
+      <section className={classNames.cardPreview0}>
+        <h2 className={classNames.contactForm36}>Other</h2>
         {simpleRow('pronouns', 'Pronouns', 'text', 'they/them')}
         {simpleRow('birthday', 'Birthday', 'date')}
         {simpleRow('notes', 'Notes', 'textarea')}
@@ -469,10 +453,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
       <Separator />
 
       {/* Emergency Info */}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-          Emergency Info
-        </h2>
+      <section className={classNames.cardPreview0}>
+        <h2 className={classNames.contactForm36}>Emergency Info</h2>
         {simpleRow('bloodGroup', 'Blood Group', 'text', 'A+, O-, etc.')}
         {simpleRow('allergies', 'Allergies', 'text', 'Peanuts, Penicillin, etc.')}
         {simpleRow('medicalNotes', 'Medical Notes', 'textarea', 'Conditions, medications, etc.')}
@@ -482,10 +464,8 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
       <Separator />
 
       {/* Custom Fields */}
-      <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-          Custom Fields
-        </h2>
+      <section className={classNames.cardPreview0}>
+        <h2 className={classNames.contactForm36}>Custom Fields</h2>
         <ContactFormCustomFields fields={state.customFields} dispatch={dispatch} />
       </section>
     </div>

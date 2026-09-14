@@ -1,3 +1,4 @@
+import { classNames } from '@/ui.stylex'
 import { IconSun, IconMoon, IconDeviceDesktop } from '@tabler/icons-react'
 import { Button } from '@/components/ui/button'
 import type { Theme } from '@/lib/use-theme'
@@ -8,7 +9,7 @@ export function ThemeToggle({ theme, setTheme }: { theme: Theme; setTheme: (t: T
 
   return (
     <Button variant="ghost" size="icon" onClick={() => setTheme(next)}>
-      <Icon className="size-4" />
+      <Icon data-stylex-sized="" className={classNames.themeToggle47} />
     </Button>
   )
 }
