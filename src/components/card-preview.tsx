@@ -93,7 +93,7 @@ export function CardPreview({ state, accentColor }: CardPreviewProps) {
     }
   }, [displayName])
 
-  const hasContent = displayName || enabledFields.length > 0
+  const hasContent = displayName || subtitleParts.length > 0 || enabledFields.length > 0
   const isHorizontal = orientation === 'horizontal'
 
   return (

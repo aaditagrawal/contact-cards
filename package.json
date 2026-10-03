@@ -15,7 +15,6 @@
     "check": "oxfmt --write \"**/*.{js,mjs,cjs,ts,tsx,jsx}\" --ignore-path .gitignore --no-error-on-unmatched-pattern && oxlint . --fix && tsc --noEmit"
   },
   "dependencies": {
-    "@base-ui/react": "^1.8.0",
     "@fontsource-variable/jetbrains-mono": "^5.3.0",
     "@stylexjs/stylex": "^0.19.1",
     "@tabler/icons-react": "^3.48.0",
