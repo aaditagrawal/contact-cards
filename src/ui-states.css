@@ -1,16 +1,8 @@
 
 
-  .contact-combobox91::-webkit-scrollbar {
-    display: none;
-  }
-@supports (color: color-mix(in lab, red, red)) {
+  @supports (color: color-mix(in lab, red, red)) {
     .contact-cardPreview15 {
       border-color: color-mix(in oklab, var(--color-white) 10%, transparent);
-    }
-}
-@supports (color: color-mix(in lab, red, red)) {
-    .contact-alertDialog48 {
-      background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
     }
 }
 @supports (color: color-mix(in lab, red, red)) {
@@ -34,57 +26,8 @@
     }
 }
 @supports (color: color-mix(in lab, red, red)) {
-    .contact-alertDialog49 {
-      --tw-ring-color: color-mix(in oklab, var(--foreground) 10%, transparent);
-    }
-}
-@supports (color: color-mix(in lab, red, red)) {
-    .contact-card75 {
-      --tw-ring-color: color-mix(in oklab, var(--foreground) 10%, transparent);
-    }
-}
-@supports (color: color-mix(in lab, red, red)) {
-    .contact-combobox90 {
-      --tw-ring-color: color-mix(in oklab, var(--foreground) 10%, transparent);
-    }
-}
-@supports (color: color-mix(in lab, red, red)) {
-    .contact-dropdownMenu101 {
-      --tw-ring-color: color-mix(in oklab, var(--foreground) 10%, transparent);
-    }
-}
-@supports (color: color-mix(in lab, red, red)) {
-    .contact-dropdownMenu109 {
-      --tw-ring-color: color-mix(in oklab, var(--foreground) 10%, transparent);
-    }
-}
-@supports (color: color-mix(in lab, red, red)) {
     .contact-select150 {
       --tw-ring-color: color-mix(in oklab, var(--foreground) 10%, transparent);
-    }
-}
-@media (forced-colors: active) {
-    .contact-combobox92 {
-      outline-offset: 2px;
-      outline: 2px solid #0000;
-    }
-}
-@media (forced-colors: active) {
-    .contact-dropdownMenu102 {
-      outline-offset: 2px;
-      outline: 2px solid #0000;
-    }
-}
-@media (forced-colors: active) {
-    .contact-dropdownMenu103 {
-      outline-offset: 2px;
-      outline: 2px solid #0000;
-    }
-}
-@media (forced-colors: active) {
-    .contact-dropdownMenu107 {
-      outline-offset: 2px;
-      outline: 2px solid #0000;
     }
 }
 @media (forced-colors: active) {
@@ -94,44 +37,12 @@
     }
 }
 
-  .contact-dropdownMenu106:is(:where(.group\/dropdown-menu-item):focus *) {
-    color: var(--accent-foreground);
-  }
-
   .contact-checkbox82:is(:where(.group\/field):has(:disabled) *) {
     opacity: .5;
   }
 
-  .contact-combobox88:is(:where(.group\/input-group):has([data-slot="combobox-clear"]) *) {
-    display: none;
-  }
-
-  .contact-field121:is(:where(.group\/field):has([data-orientation="horizontal"]) *) {
-    text-wrap: balance;
-  }
-
-  .contact-inputGroup133:is(:where(.group\/input-group):has( > input) *) {
-    padding-top: calc(var(--spacing) * 2);
-  }
-
-  .contact-inputGroup134:is(:where(.group\/input-group):has( > input) *) {
-    padding-bottom: calc(var(--spacing) * 2);
-  }
-
-  .contact-combobox95:is(:where(.group\/combobox-content)[data-empty] *) {
-    display: flex;
-  }
-
   .contact-label143:is(:where(.group)[data-disabled="true"] *) {
     pointer-events: none;
-  }
-
-   .contact-field120:is(:where(.group\/field)[data-disabled="true"] *) {
-    opacity: .5;
-  }
-
-   .contact-inputGroup130:is(:where(.group\/input-group)[data-disabled="true"] *) {
-    opacity: .5;
   }
 
   .contact-label143:is(:where(.group)[data-disabled="true"] *) {
@@ -143,38 +54,9 @@
     height: calc(var(--spacing) * 4);
   }
 
-  .contact-alertDialog51:is(:where(.group\/alert-dialog-content)[data-size="sm"] *) {
-    display: grid;
-  }
-
-  .contact-alertDialog51:is(:where(.group\/alert-dialog-content)[data-size="sm"] *) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .contact-card81:is(:where(.group\/card)[data-size="sm"] *) {
-    padding: calc(var(--spacing) * 3);
-  }
-
-  .contact-card76:is(:where(.group\/card)[data-size="sm"] *) {
-    padding-inline: calc(var(--spacing) * 3);
-  }
-
-  .contact-card80:is(:where(.group\/card)[data-size="sm"] *) {
-    padding-inline: calc(var(--spacing) * 3);
-  }
-
-  .contact-card77:is(:where(.group\/card)[data-size="sm"] *) {
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
-
   .contact-switch158:is(:where(.group\/switch)[data-size="sm"] *) {
     width: calc(var(--spacing) * 3);
     height: calc(var(--spacing) * 3);
-  }
-
-  .contact-field124:is(:where(.group\/field-group)[data-variant="outline"] *) {
-    margin-bottom: calc(var(--spacing) * -2);
   }
 
   .contact-label143:is(:where(.peer):disabled ~ *) {
@@ -254,29 +136,6 @@
     inset-block: calc(var(--spacing) * -2);
   }
 
-  .contact-field122:last-child {
-    margin-top: 0;
-  }
-
-  .contact-combobox97:focus-within {
-    border-color: var(--ring);
-  }
-
-  .contact-combobox97:focus-within {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  .contact-combobox97:focus-within {
-    --tw-ring-color: var(--ring);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-combobox97:focus-within {
-      --tw-ring-color: color-mix(in oklab, var(--ring) 50%, transparent);
-    }
-}
-
   @media (hover: hover) {
     .contact-index175:hover {
       --tw-scale-x: 110%;
@@ -298,13 +157,6 @@
       .contact-button66:hover {
         background-color: color-mix(in oklab, var(--destructive) 20%, transparent);
       }
-    }
-}
-
-  @media (hover: hover) {
-
-    .contact-badge60:hover {
-      background-color: var(--muted);
     }
 }
 
@@ -353,51 +205,13 @@
 
   @media (hover: hover) {
 
-    .contact-badge60:hover {
-      color: var(--muted-foreground);
-    }
-}
-
-  @media (hover: hover) {
-
     .contact-badge61:hover {
       text-decoration-line: underline;
     }
 }
 
-  @media (hover: hover) {
-
-    .contact-combobox99:hover {
-      opacity: 1;
-    }
-}
-
-  .contact-dropdownMenu102:focus {
-    background-color: var(--accent);
-  }
-
-  .contact-dropdownMenu103:focus {
-    background-color: var(--accent);
-  }
-
-  .contact-dropdownMenu107:focus {
-    background-color: var(--accent);
-  }
-
   .contact-select153:focus {
     background-color: var(--accent);
-  }
-
-  .contact-dropdownMenu102:focus, :is(.contact-dropdownMenu102:not([data-variant="destructive"]):focus *) {
-    color: var(--accent-foreground);
-  }
-
-  .contact-dropdownMenu103:focus, :is(.contact-dropdownMenu103:focus *) {
-    color: var(--accent-foreground);
-  }
-
-  .contact-dropdownMenu107:focus, :is(.contact-dropdownMenu107:not([data-variant="destructive"]):focus *) {
-    color: var(--accent-foreground);
   }
 
   .contact-select153:focus, :is(.contact-select153:not([data-variant="destructive"]):focus *) {
@@ -414,10 +228,6 @@
     }
 }
 
-  .contact-badge55:focus-visible {
-    border-color: var(--ring);
-  }
-
   .contact-button62:focus-visible {
     border-color: var(--ring);
   }
@@ -440,16 +250,6 @@
 
   .contact-textarea159:focus-visible {
     border-color: var(--ring);
-  }
-
-  .contact-inputGroup140:focus-visible {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  .contact-inputGroup141:focus-visible {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
   .contact-button62:focus-visible {
@@ -479,21 +279,12 @@
 
   .contact-textarea159:focus-visible {
     --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  .contact-badge55:focus-visible {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
   .contact-scrollArea145:focus-visible {
     --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  .contact-badge58:focus-visible {
-    --tw-ring-color: var(--destructive);
   }
 
   .contact-button66:focus-visible {
@@ -501,20 +292,10 @@
   }
 
   @supports (color: color-mix(in lab, red, red)) {
-    .contact-badge58:focus-visible {
-      --tw-ring-color: color-mix(in oklab, var(--destructive) 20%, transparent);
-    }
-}
-
-  @supports (color: color-mix(in lab, red, red)) {
     .contact-button66:focus-visible {
       --tw-ring-color: color-mix(in oklab, var(--destructive) 20%, transparent);
     }
 }
-
-  .contact-badge55:focus-visible {
-    --tw-ring-color: var(--ring);
-  }
 
   .contact-button62:focus-visible {
     --tw-ring-color: var(--ring);
@@ -543,12 +324,6 @@
   .contact-textarea159:focus-visible {
     --tw-ring-color: var(--ring);
   }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-badge55:focus-visible {
-      --tw-ring-color: color-mix(in oklab, var(--ring) 50%, transparent);
-    }
-}
 
   @supports (color: color-mix(in lab, red, red)) {
     .contact-button62:focus-visible {
@@ -641,14 +416,6 @@
     }
 }
 
-  .contact-inputGroup140:disabled {
-    background-color: #0000;
-  }
-
-  .contact-inputGroup141:disabled {
-    background-color: #0000;
-  }
-
   .contact-button62:disabled {
     opacity: .5;
   }
@@ -669,55 +436,6 @@
     opacity: .5;
   }
 
-  .contact-combobox98:has(:disabled) {
-    pointer-events: none;
-  }
-
-  .contact-combobox98:has(:disabled) {
-    cursor: not-allowed;
-  }
-
-  .contact-inputGroup129:has(:disabled) {
-    background-color: var(--input);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-inputGroup129:has(:disabled) {
-      background-color: color-mix(in oklab, var(--input) 50%, transparent);
-    }
-}
-
-  .contact-combobox98:has(:disabled) {
-    opacity: .5;
-  }
-
-  .contact-inputGroup129:has(:disabled) {
-    opacity: .5;
-  }
-
-  .contact-combobox97:has([aria-invalid="true"]) {
-    border-color: var(--destructive);
-  }
-
-  .contact-combobox97:has([aria-invalid="true"]) {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  .contact-combobox97:has([aria-invalid="true"]) {
-    --tw-ring-color: var(--destructive);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-combobox97:has([aria-invalid="true"]) {
-      --tw-ring-color: color-mix(in oklab, var(--destructive) 20%, transparent);
-    }
-}
-
-  .contact-badge55:has([data-icon="inline-end"]) {
-    padding-right: calc(var(--spacing) * 1.5);
-  }
-
   .contact-button68:has([data-icon="inline-end"]) {
     padding-right: calc(var(--spacing) * 1.5);
   }
@@ -734,10 +452,6 @@
     padding-right: calc(var(--spacing) * 3);
   }
 
-  .contact-badge55:has([data-icon="inline-start"]) {
-    padding-left: calc(var(--spacing) * 1.5);
-  }
-
   .contact-button68:has([data-icon="inline-start"]) {
     padding-left: calc(var(--spacing) * 1.5);
   }
@@ -752,140 +466,6 @@
 
   .contact-button70:has([data-icon="inline-start"]) {
     padding-left: calc(var(--spacing) * 3);
-  }
-
-  .contact-alertDialog50:has([data-slot="alert-dialog-media"]) {
-    grid-template-rows: auto auto 1fr;
-  }
-
-  .contact-alertDialog50:has([data-slot="alert-dialog-media"]) {
-    column-gap: calc(var(--spacing) * 4);
-  }
-
-  .contact-card76:has([data-slot="card-action"]) {
-    grid-template-columns: 1fr auto;
-  }
-
-  .contact-card76:has([data-slot="card-description"]) {
-    grid-template-rows: auto auto;
-  }
-
-  .contact-card75:has([data-slot="card-footer"]) {
-    padding-bottom: 0;
-  }
-
-  .contact-combobox97:has([data-slot="combobox-chip"]) {
-    padding-inline: var(--spacing);
-  }
-
-  .contact-combobox98:has([data-slot="combobox-chip-remove"]) {
-    padding-right: 0;
-  }
-
-  .contact-inputGroup129:has([data-slot="input-group-control"]:focus-visible) {
-    border-color: var(--ring);
-  }
-
-  .contact-inputGroup129:has([data-slot="input-group-control"]:focus-visible) {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  .contact-inputGroup129:has([data-slot="input-group-control"]:focus-visible) {
-    --tw-ring-color: var(--ring);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-inputGroup129:has([data-slot="input-group-control"]:focus-visible) {
-      --tw-ring-color: color-mix(in oklab, var(--ring) 50%, transparent);
-    }
-}
-
-  .contact-inputGroup129:has([data-slot][aria-invalid="true"]) {
-    border-color: var(--destructive);
-  }
-
-  .contact-inputGroup129:has([data-slot][aria-invalid="true"]) {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  .contact-inputGroup129:has([data-slot][aria-invalid="true"]) {
-    --tw-ring-color: var(--destructive);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-inputGroup129:has([data-slot][aria-invalid="true"]) {
-      --tw-ring-color: color-mix(in oklab, var(--destructive) 20%, transparent);
-    }
-}
-
-  .contact-inputGroup129:has( > [data-align="block-end"]) {
-    height: auto;
-  }
-
-  .contact-inputGroup129:has( > [data-align="block-end"]) {
-    flex-direction: column;
-  }
-
-  .contact-inputGroup129:has( > [data-align="block-start"]) {
-    height: auto;
-  }
-
-  .contact-inputGroup129:has( > [data-align="block-start"]) {
-    flex-direction: column;
-  }
-
-  .contact-field110:has( > [data-slot="checkbox-group"]) {
-    gap: calc(var(--spacing) * 3);
-  }
-
-  .contact-field115:has( > [data-slot="field-content"]) {
-    align-items: flex-start;
-  }
-
-  .contact-field119:has( > [data-slot="field"]) {
-    width: 100%;
-  }
-
-  .contact-field119:has( > [data-slot="field"]) {
-    flex-direction: column;
-  }
-
-  .contact-field110:has( > [data-slot="radio-group"]) {
-    gap: calc(var(--spacing) * 3);
-  }
-
-  .contact-inputGroup132:has( > button) {
-    margin-right: -.3rem;
-  }
-
-  .contact-inputGroup131:has( > button) {
-    margin-left: -.3rem;
-  }
-
-  .contact-card75:has( > img:first-child) {
-    padding-top: 0;
-  }
-
-  .contact-inputGroup132:has( > kbd) {
-    margin-right: -.15rem;
-  }
-
-  .contact-inputGroup131:has( > kbd) {
-    margin-left: -.15rem;
-  }
-
-  .contact-inputGroup137:has( > svg) {
-    padding: 0;
-  }
-
-  .contact-inputGroup138:has( > svg) {
-    padding: 0;
-  }
-
-  .contact-inputGroup129:has( > textarea) {
-    height: auto;
   }
 
   .contact-button63[aria-expanded="true"] {
@@ -912,10 +492,6 @@
     color: var(--secondary-foreground);
   }
 
-  .contact-badge55[aria-invalid="true"] {
-    border-color: var(--destructive);
-  }
-
   .contact-button62[aria-invalid="true"] {
     border-color: var(--destructive);
   }
@@ -938,16 +514,6 @@
 
   .contact-textarea159[aria-invalid="true"] {
     border-color: var(--destructive);
-  }
-
-  .contact-inputGroup140[aria-invalid="true"] {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  .contact-inputGroup141[aria-invalid="true"] {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
   .contact-button62[aria-invalid="true"] {
@@ -980,10 +546,6 @@
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
-  .contact-badge55[aria-invalid="true"] {
-    --tw-ring-color: var(--destructive);
-  }
-
   .contact-button62[aria-invalid="true"] {
     --tw-ring-color: var(--destructive);
   }
@@ -1007,12 +569,6 @@
   .contact-textarea159[aria-invalid="true"] {
     --tw-ring-color: var(--destructive);
   }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-badge55[aria-invalid="true"] {
-      --tw-ring-color: color-mix(in oklab, var(--destructive) 20%, transparent);
-    }
-}
 
   @supports (color: color-mix(in lab, red, red)) {
     .contact-button62[aria-invalid="true"] {
@@ -1054,76 +610,16 @@
     border-color: var(--primary);
   }
 
-  .contact-combobox91[data-empty] {
-    padding: 0;
-  }
-
-  .contact-combobox92[data-highlighted] {
-    background-color: var(--accent);
-  }
-
-  .contact-combobox92[data-highlighted], :is(.contact-combobox92:not([data-variant="destructive"])[data-highlighted] *) {
-    color: var(--accent-foreground);
-  }
-
-  .contact-combobox88[data-pressed] {
-    background-color: #0000;
-  }
-
   .contact-select150[data-align-trigger="true"] {
     animation: none;
   }
 
-  .contact-combobox90[data-chips="true"] {
-    min-width: var(--anchor-width);
-  }
-
-  .contact-combobox92[data-disabled] {
-    pointer-events: none;
-  }
-
-  .contact-dropdownMenu102[data-disabled] {
-    pointer-events: none;
-  }
-
-  .contact-dropdownMenu103[data-disabled] {
-    pointer-events: none;
-  }
-
   .contact-select153[data-disabled] {
     pointer-events: none;
   }
 
-  .contact-combobox92[data-disabled] {
-    opacity: .5;
-  }
-
-  .contact-dropdownMenu102[data-disabled] {
-    opacity: .5;
-  }
-
-  .contact-dropdownMenu103[data-disabled] {
-    opacity: .5;
-  }
-
   .contact-select153[data-disabled] {
     opacity: .5;
-  }
-
-  .contact-dropdownMenu102[data-inset] {
-    padding-left: calc(var(--spacing) * 8);
-  }
-
-  .contact-dropdownMenu105[data-inset] {
-    padding-left: calc(var(--spacing) * 8);
-  }
-
-  .contact-dropdownMenu107[data-inset] {
-    padding-left: calc(var(--spacing) * 8);
-  }
-
-  .contact-field113[data-invalid="true"] {
-    color: var(--destructive);
   }
 
   .contact-separator156[data-orientation="horizontal"] {
@@ -1163,18 +659,6 @@
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
 
-  .contact-combobox90[data-side="bottom"] {
-    --tw-enter-translate-y: calc(2*var(--spacing)*-1);
-  }
-
-  .contact-dropdownMenu101[data-side="bottom"] {
-    --tw-enter-translate-y: calc(2*var(--spacing)*-1);
-  }
-
-  .contact-dropdownMenu109[data-side="bottom"] {
-    --tw-enter-translate-y: calc(2*var(--spacing)*-1);
-  }
-
   .contact-select150[data-side="bottom"] {
     --tw-enter-translate-y: calc(2*var(--spacing)*-1);
   }
@@ -1182,18 +666,6 @@
   .contact-select151[data-side="left"] {
     --tw-translate-x: calc(var(--spacing) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-
-  .contact-combobox90[data-side="left"] {
-    --tw-enter-translate-x: calc(2*var(--spacing));
-  }
-
-  .contact-dropdownMenu101[data-side="left"] {
-    --tw-enter-translate-x: calc(2*var(--spacing));
-  }
-
-  .contact-dropdownMenu109[data-side="left"] {
-    --tw-enter-translate-x: calc(2*var(--spacing));
   }
 
   .contact-select150[data-side="left"] {
@@ -1205,18 +677,6 @@
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
 
-  .contact-combobox90[data-side="right"] {
-    --tw-enter-translate-x: calc(2*var(--spacing)*-1);
-  }
-
-  .contact-dropdownMenu101[data-side="right"] {
-    --tw-enter-translate-x: calc(2*var(--spacing)*-1);
-  }
-
-  .contact-dropdownMenu109[data-side="right"] {
-    --tw-enter-translate-x: calc(2*var(--spacing)*-1);
-  }
-
   .contact-select150[data-side="right"] {
     --tw-enter-translate-x: calc(2*var(--spacing)*-1);
   }
@@ -1224,18 +684,6 @@
   .contact-select151[data-side="top"] {
     --tw-translate-y: calc(var(--spacing) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-
-  .contact-combobox90[data-side="top"] {
-    --tw-enter-translate-y: calc(2*var(--spacing));
-  }
-
-  .contact-dropdownMenu101[data-side="top"] {
-    --tw-enter-translate-y: calc(2*var(--spacing));
-  }
-
-  .contact-dropdownMenu109[data-side="top"] {
-    --tw-enter-translate-y: calc(2*var(--spacing));
   }
 
   .contact-select150[data-side="top"] {
@@ -1254,10 +702,6 @@
     width: 32px;
   }
 
-  .contact-alertDialog49[data-size="default"] {
-    max-width: var(--container-xs);
-  }
-
   .contact-select149[data-size="sm"] {
     height: calc(var(--spacing) * 7);
   }
@@ -1270,65 +714,8 @@
     width: 24px;
   }
 
-  .contact-alertDialog49[data-size="sm"] {
-    max-width: var(--container-xs);
-  }
-
-  .contact-card75[data-size="sm"] {
-    gap: calc(var(--spacing) * 2);
-  }
-
   .contact-select149[data-size="sm"] {
     border-radius: 0;
-  }
-
-  .contact-card75[data-size="sm"] {
-    padding-block: calc(var(--spacing) * 3);
-  }
-
-  .contact-card75[data-size="sm"]:has([data-slot="card-footer"]) {
-    padding-bottom: 0;
-  }
-
-  .contact-field112[data-slot="checkbox-group"] {
-    gap: calc(var(--spacing) * 3);
-  }
-
-  :is(.contact-combobox90 > *)[data-slot="input-group"] {
-    margin: var(--spacing);
-  }
-
-  :is(.contact-combobox90 > *)[data-slot="input-group"] {
-    margin-bottom: 0;
-  }
-
-  :is(.contact-combobox90 > *)[data-slot="input-group"] {
-    height: calc(var(--spacing) * 8);
-  }
-
-  :is(.contact-combobox90 > *)[data-slot="input-group"] {
-    border-color: var(--input);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    :is(.contact-combobox90 > *)[data-slot="input-group"] {
-      border-color: color-mix(in oklab, var(--input) 30%, transparent);
-    }
-}
-
-  :is(.contact-combobox90 > *)[data-slot="input-group"] {
-    background-color: var(--input);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    :is(.contact-combobox90 > *)[data-slot="input-group"] {
-      background-color: color-mix(in oklab, var(--input) 30%, transparent);
-    }
-}
-
-  :is(.contact-combobox90 > *)[data-slot="input-group"] {
-    --tw-shadow: 0 0 #0000;
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
   :is(.contact-select149 > *)[data-slot="select-value"] {
@@ -1349,62 +736,6 @@
   :is(.contact-select149 > *)[data-slot="select-value"] {
     gap: calc(var(--spacing) * 1.5);
   }
-
-  .contact-dropdownMenu101[data-state="closed"] {
-    overflow: hidden;
-  }
-
-  .contact-dropdownMenu102[data-variant="destructive"] {
-    color: var(--destructive);
-  }
-
-  .contact-dropdownMenu102[data-variant="destructive"]:focus {
-    background-color: var(--destructive);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-dropdownMenu102[data-variant="destructive"]:focus {
-      background-color: color-mix(in oklab, var(--destructive) 10%, transparent);
-    }
-}
-
-  .contact-dropdownMenu102[data-variant="destructive"]:focus {
-    color: var(--destructive);
-  }
-
-  .contact-field111[data-variant="label"] {
-    font-size: var(--text-xs);
-    line-height: var(--tw-leading, var(--text-xs--line-height));
-  }
-
-  .contact-field111[data-variant="legend"] {
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
-
-  .contact-field122:nth-last-child(2) {
-    margin-top: calc(var(--spacing) * -1);
-  }
-
-  @supports ((-webkit-backdrop-filter: var(--tw)) or (backdrop-filter: var(--tw))) {
-    .contact-alertDialog48 {
-      --tw-backdrop-blur: blur(var(--blur-xs));
-      backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
-    }
-}
-
-  @media (width >= 40rem) {
-    .contact-alertDialog51 {
-      flex-direction: row;
-    }
-}
-
-  @media (width >= 40rem) {
-
-    .contact-alertDialog51 {
-      justify-content: flex-end;
-    }
-}
 
   @media (width >= 40rem) {
 
@@ -1433,48 +764,6 @@
     .contact-cardPreview18 {
       font-size: var(--text-3xl);
       line-height: var(--tw-leading, var(--text-3xl--line-height));
-    }
-}
-
-  @media (width >= 40rem) {
-
-    .contact-alertDialog52:is(:where(.group\/alert-dialog-content)[data-size="default"] *) {
-      grid-row: span 2 / span 2;
-    }
-}
-
-  @media (width >= 40rem) {
-
-    .contact-alertDialog50:is(:where(.group\/alert-dialog-content)[data-size="default"] *) {
-      place-items: start;
-    }
-}
-
-  @media (width >= 40rem) {
-
-    .contact-alertDialog50:is(:where(.group\/alert-dialog-content)[data-size="default"] *) {
-      text-align: left;
-    }
-}
-
-  @media (width >= 40rem) {
-
-    .contact-alertDialog53:is(:where(.group\/alert-dialog-content)[data-size="default"] *):is(:where(.group\/alert-dialog-content):has([data-slot="alert-dialog-media"]) *) {
-      grid-column-start: 2;
-    }
-}
-
-  @media (width >= 40rem) {
-
-    .contact-alertDialog50:is(:where(.group\/alert-dialog-content)[data-size="default"] *):has([data-slot="alert-dialog-media"]) {
-      grid-template-rows: auto 1fr;
-    }
-}
-
-  @media (width >= 40rem) {
-
-    .contact-alertDialog49[data-size="default"] {
-      max-width: var(--container-sm);
     }
 }
 
@@ -1556,50 +845,13 @@
     }
 }
 
-  @media (width >= 48rem) {
-
-    .contact-alertDialog54 {
-      text-wrap: pretty;
-    }
-}
-
-  @container field-group (width >= 28rem) {
-    .contact-field116 {
-      flex-direction: row;
-    }
-}
-
-  @container field-group (width >= 28rem) {
-
-    .contact-field116 {
-      align-items: center;
-    }
-}
-
-  @container field-group (width >= 28rem) {
-
-    .contact-field116:has( > [data-slot="field-content"]) {
-      align-items: flex-start;
-    }
-}
-
   .contact-button63:is(.dark *) {
     border-color: var(--input);
-  }
-
-  .contact-badge58:is(.dark *) {
-    background-color: var(--destructive);
   }
 
   .contact-button66:is(.dark *) {
     background-color: var(--destructive);
   }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-badge58:is(.dark *) {
-      background-color: color-mix(in oklab, var(--destructive) 20%, transparent);
-    }
-}
 
   @supports (color: color-mix(in lab, red, red)) {
     .contact-button66:is(.dark *) {
@@ -1612,14 +864,6 @@
   }
 
   .contact-checkbox82:is(.dark *) {
-    background-color: var(--input);
-  }
-
-  .contact-combobox97:is(.dark *) {
-    background-color: var(--input);
-  }
-
-  .contact-inputGroup129:is(.dark *) {
     background-color: var(--input);
   }
 
@@ -1648,18 +892,6 @@
 }
 
   @supports (color: color-mix(in lab, red, red)) {
-    .contact-combobox97:is(.dark *) {
-      background-color: color-mix(in oklab, var(--input) 30%, transparent);
-    }
-}
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-inputGroup129:is(.dark *) {
-      background-color: color-mix(in oklab, var(--input) 30%, transparent);
-    }
-}
-
-  @supports (color: color-mix(in lab, red, red)) {
     .contact-input142:is(.dark *) {
       background-color: color-mix(in oklab, var(--input) 30%, transparent);
     }
@@ -1676,14 +908,6 @@
       background-color: color-mix(in oklab, var(--input) 30%, transparent);
     }
 }
-
-  .contact-inputGroup140:is(.dark *) {
-    background-color: #0000;
-  }
-
-  .contact-inputGroup141:is(.dark *) {
-    background-color: #0000;
-  }
 
   @media (hover: hover) {
     .contact-button66:is(.dark *):hover {
@@ -1731,24 +955,12 @@
 
   @media (hover: hover) {
 
-    .contact-badge60:is(.dark *):hover {
-      background-color: var(--muted);
-    }
-}
-
-  @media (hover: hover) {
-
     .contact-button65:is(.dark *):hover {
       background-color: var(--muted);
     }
 }
 
   @media (hover: hover) {
-    @supports (color: color-mix(in lab, red, red)) {
-      .contact-badge60:is(.dark *):hover {
-        background-color: color-mix(in oklab, var(--muted) 50%, transparent);
-      }
-    }
 }
 
   @media (hover: hover) {
@@ -1759,19 +971,9 @@
     }
 }
 
-  .contact-badge58:is(.dark *):focus-visible {
-    --tw-ring-color: var(--destructive);
-  }
-
   .contact-button66:is(.dark *):focus-visible {
     --tw-ring-color: var(--destructive);
   }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-badge58:is(.dark *):focus-visible {
-      --tw-ring-color: color-mix(in oklab, var(--destructive) 40%, transparent);
-    }
-}
 
   @supports (color: color-mix(in lab, red, red)) {
     .contact-button66:is(.dark *):focus-visible {
@@ -1799,54 +1001,6 @@
     }
 }
 
-  .contact-inputGroup140:is(.dark *):disabled {
-    background-color: #0000;
-  }
-
-  .contact-inputGroup141:is(.dark *):disabled {
-    background-color: #0000;
-  }
-
-  .contact-inputGroup129:is(.dark *):has(:disabled) {
-    background-color: var(--input);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-inputGroup129:is(.dark *):has(:disabled) {
-      background-color: color-mix(in oklab, var(--input) 80%, transparent);
-    }
-}
-
-  .contact-combobox97:is(.dark *):has([aria-invalid="true"]) {
-    border-color: var(--destructive);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-combobox97:is(.dark *):has([aria-invalid="true"]) {
-      border-color: color-mix(in oklab, var(--destructive) 50%, transparent);
-    }
-}
-
-  .contact-combobox97:is(.dark *):has([aria-invalid="true"]) {
-    --tw-ring-color: var(--destructive);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-combobox97:is(.dark *):has([aria-invalid="true"]) {
-      --tw-ring-color: color-mix(in oklab, var(--destructive) 40%, transparent);
-    }
-}
-
-  .contact-inputGroup129:is(.dark *):has([data-slot][aria-invalid="true"]) {
-    --tw-ring-color: var(--destructive);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-inputGroup129:is(.dark *):has([data-slot][aria-invalid="true"]) {
-      --tw-ring-color: color-mix(in oklab, var(--destructive) 40%, transparent);
-    }
-}
-
   .contact-button62:is(.dark *)[aria-invalid="true"] {
     border-color: var(--destructive);
   }
@@ -1907,10 +1061,6 @@
     }
 }
 
-  .contact-badge55:is(.dark *)[aria-invalid="true"] {
-    --tw-ring-color: var(--destructive);
-  }
-
   .contact-button62:is(.dark *)[aria-invalid="true"] {
     --tw-ring-color: var(--destructive);
   }
@@ -1934,12 +1084,6 @@
   .contact-textarea159:is(.dark *)[aria-invalid="true"] {
     --tw-ring-color: var(--destructive);
   }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-badge55:is(.dark *)[aria-invalid="true"] {
-      --tw-ring-color: color-mix(in oklab, var(--destructive) 40%, transparent);
-    }
-}
 
   @supports (color: color-mix(in lab, red, red)) {
     .contact-button62:is(.dark *)[aria-invalid="true"] {
@@ -1977,154 +1121,24 @@
     }
 }
 
-  .contact-dropdownMenu102:is(.dark *)[data-variant="destructive"]:focus {
-    background-color: var(--destructive);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-dropdownMenu102:is(.dark *)[data-variant="destructive"]:focus {
-      background-color: color-mix(in oklab, var(--destructive) 20%, transparent);
-    }
-}
-
-  .contact-alertDialog48:where([data-state="open"]), .contact-alertDialog48:where([data-open]:not([data-open="false"])) {
-    animation: enter var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
-  }
-
-  .contact-alertDialog49:where([data-state="open"]), .contact-alertDialog49:where([data-open]:not([data-open="false"])) {
-    animation: enter var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
-  }
-
-  .contact-combobox90:where([data-state="open"]), .contact-combobox90:where([data-open]:not([data-open="false"])) {
-    animation: enter var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
-  }
-
-  .contact-dropdownMenu101:where([data-state="open"]), .contact-dropdownMenu101:where([data-open]:not([data-open="false"])) {
-    animation: enter var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
-  }
-
-  .contact-dropdownMenu109:where([data-state="open"]), .contact-dropdownMenu109:where([data-open]:not([data-open="false"])) {
-    animation: enter var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
-  }
-
   .contact-select150:where([data-state="open"]), .contact-select150:where([data-open]:not([data-open="false"])) {
     animation: enter var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
-  }
-
-  .contact-dropdownMenu107:where([data-state="open"]), .contact-dropdownMenu107:where([data-open]:not([data-open="false"])) {
-    background-color: var(--accent);
-  }
-
-  .contact-dropdownMenu107:where([data-state="open"]), .contact-dropdownMenu107:where([data-open]:not([data-open="false"])) {
-    color: var(--accent-foreground);
-  }
-
-  .contact-alertDialog48:where([data-state="open"]), .contact-alertDialog48:where([data-open]:not([data-open="false"])) {
-    --tw-enter-opacity: 0;
-  }
-
-  .contact-alertDialog49:where([data-state="open"]), .contact-alertDialog49:where([data-open]:not([data-open="false"])) {
-    --tw-enter-opacity: 0;
-  }
-
-  .contact-combobox90:where([data-state="open"]), .contact-combobox90:where([data-open]:not([data-open="false"])) {
-    --tw-enter-opacity: 0;
-  }
-
-  .contact-dropdownMenu101:where([data-state="open"]), .contact-dropdownMenu101:where([data-open]:not([data-open="false"])) {
-    --tw-enter-opacity: 0;
-  }
-
-  .contact-dropdownMenu109:where([data-state="open"]), .contact-dropdownMenu109:where([data-open]:not([data-open="false"])) {
-    --tw-enter-opacity: 0;
   }
 
   .contact-select150:where([data-state="open"]), .contact-select150:where([data-open]:not([data-open="false"])) {
     --tw-enter-opacity: 0;
   }
 
-  .contact-alertDialog49:where([data-state="open"]), .contact-alertDialog49:where([data-open]:not([data-open="false"])) {
-    --tw-enter-scale: .95;
-  }
-
-  .contact-combobox90:where([data-state="open"]), .contact-combobox90:where([data-open]:not([data-open="false"])) {
-    --tw-enter-scale: .95;
-  }
-
-  .contact-dropdownMenu101:where([data-state="open"]), .contact-dropdownMenu101:where([data-open]:not([data-open="false"])) {
-    --tw-enter-scale: .95;
-  }
-
-  .contact-dropdownMenu109:where([data-state="open"]), .contact-dropdownMenu109:where([data-open]:not([data-open="false"])) {
-    --tw-enter-scale: .95;
-  }
-
   .contact-select150:where([data-state="open"]), .contact-select150:where([data-open]:not([data-open="false"])) {
     --tw-enter-scale: .95;
-  }
-
-  .contact-alertDialog48:where([data-state="closed"]), .contact-alertDialog48:where([data-closed]:not([data-closed="false"])) {
-    animation: exit var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
-  }
-
-  .contact-alertDialog49:where([data-state="closed"]), .contact-alertDialog49:where([data-closed]:not([data-closed="false"])) {
-    animation: exit var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
-  }
-
-  .contact-combobox90:where([data-state="closed"]), .contact-combobox90:where([data-closed]:not([data-closed="false"])) {
-    animation: exit var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
-  }
-
-  .contact-dropdownMenu101:where([data-state="closed"]), .contact-dropdownMenu101:where([data-closed]:not([data-closed="false"])) {
-    animation: exit var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
-  }
-
-  .contact-dropdownMenu109:where([data-state="closed"]), .contact-dropdownMenu109:where([data-closed]:not([data-closed="false"])) {
-    animation: exit var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
   }
 
   .contact-select150:where([data-state="closed"]), .contact-select150:where([data-closed]:not([data-closed="false"])) {
     animation: exit var(--tw-animation-duration, var(--tw-duration, .15s))var(--tw-ease, ease)var(--tw-animation-delay, 0s)var(--tw-animation-iteration-count, 1)var(--tw-animation-direction, normal)var(--tw-animation-fill-mode, none);
   }
 
-  .contact-alertDialog48:where([data-state="closed"]), .contact-alertDialog48:where([data-closed]:not([data-closed="false"])) {
-    --tw-exit-opacity: 0;
-  }
-
-  .contact-alertDialog49:where([data-state="closed"]), .contact-alertDialog49:where([data-closed]:not([data-closed="false"])) {
-    --tw-exit-opacity: 0;
-  }
-
-  .contact-combobox90:where([data-state="closed"]), .contact-combobox90:where([data-closed]:not([data-closed="false"])) {
-    --tw-exit-opacity: 0;
-  }
-
-  .contact-dropdownMenu101:where([data-state="closed"]), .contact-dropdownMenu101:where([data-closed]:not([data-closed="false"])) {
-    --tw-exit-opacity: 0;
-  }
-
-  .contact-dropdownMenu109:where([data-state="closed"]), .contact-dropdownMenu109:where([data-closed]:not([data-closed="false"])) {
-    --tw-exit-opacity: 0;
-  }
-
   .contact-select150:where([data-state="closed"]), .contact-select150:where([data-closed]:not([data-closed="false"])) {
     --tw-exit-opacity: 0;
-  }
-
-  .contact-alertDialog49:where([data-state="closed"]), .contact-alertDialog49:where([data-closed]:not([data-closed="false"])) {
-    --tw-exit-scale: .95;
-  }
-
-  .contact-combobox90:where([data-state="closed"]), .contact-combobox90:where([data-closed]:not([data-closed="false"])) {
-    --tw-exit-scale: .95;
-  }
-
-  .contact-dropdownMenu101:where([data-state="closed"]), .contact-dropdownMenu101:where([data-closed]:not([data-closed="false"])) {
-    --tw-exit-scale: .95;
-  }
-
-  .contact-dropdownMenu109:where([data-state="closed"]), .contact-dropdownMenu109:where([data-closed]:not([data-closed="false"])) {
-    --tw-exit-scale: .95;
   }
 
   .contact-select150:where([data-state="closed"]), .contact-select150:where([data-closed]:not([data-closed="false"])) {
@@ -2229,26 +1243,6 @@
     pointer-events: none;
   }
 
-  .contact-combobox92 svg {
-    pointer-events: none;
-  }
-
-  .contact-dropdownMenu102 svg {
-    pointer-events: none;
-  }
-
-  .contact-dropdownMenu103 svg {
-    pointer-events: none;
-  }
-
-  .contact-dropdownMenu107 svg {
-    pointer-events: none;
-  }
-
-  .contact-inputGroup139 svg {
-    pointer-events: none;
-  }
-
   .contact-select149 svg {
     pointer-events: none;
   }
@@ -2258,22 +1252,6 @@
   }
 
   .contact-button62 svg {
-    flex-shrink: 0;
-  }
-
-  .contact-combobox92 svg {
-    flex-shrink: 0;
-  }
-
-  .contact-dropdownMenu102 svg {
-    flex-shrink: 0;
-  }
-
-  .contact-dropdownMenu103 svg {
-    flex-shrink: 0;
-  }
-
-  .contact-dropdownMenu107 svg {
     flex-shrink: 0;
   }
 
@@ -2305,36 +1283,6 @@
     height: calc(var(--spacing) * 4);
   }
 
-  .contact-combobox84 svg:not([data-stylex-sized]) {
-    width: calc(var(--spacing) * 4);
-    height: calc(var(--spacing) * 4);
-  }
-
-  .contact-combobox92 svg:not([data-stylex-sized]) {
-    width: calc(var(--spacing) * 4);
-    height: calc(var(--spacing) * 4);
-  }
-
-  .contact-dropdownMenu102 svg:not([data-stylex-sized]) {
-    width: calc(var(--spacing) * 4);
-    height: calc(var(--spacing) * 4);
-  }
-
-  .contact-dropdownMenu103 svg:not([data-stylex-sized]) {
-    width: calc(var(--spacing) * 4);
-    height: calc(var(--spacing) * 4);
-  }
-
-  .contact-dropdownMenu107 svg:not([data-stylex-sized]) {
-    width: calc(var(--spacing) * 4);
-    height: calc(var(--spacing) * 4);
-  }
-
-  .contact-inputGroup139 svg:not([data-stylex-sized]) {
-    width: calc(var(--spacing) * 4);
-    height: calc(var(--spacing) * 4);
-  }
-
   .contact-select149 svg:not([data-stylex-sized]) {
     width: calc(var(--spacing) * 4);
     height: calc(var(--spacing) * 4);
@@ -2350,33 +1298,7 @@
     height: calc(var(--spacing) * 4);
   }
 
-  :is(.contact-alertDialog54 > *):is(a) {
-    text-decoration-line: underline;
-  }
-
-  :is(.contact-alertDialog54 > *):is(a) {
-    text-underline-offset: 3px;
-  }
-
   @media (hover: hover) {
-    .contact-badge58:is(a):hover {
-      background-color: var(--destructive);
-    }
-}
-
-  @media (hover: hover) {
-    @supports (color: color-mix(in lab, red, red)) {
-      .contact-badge58:is(a):hover {
-        background-color: color-mix(in oklab, var(--destructive) 20%, transparent);
-      }
-    }
-}
-
-  @media (hover: hover) {
-
-    .contact-badge59:is(a):hover {
-      background-color: var(--muted);
-    }
 }
 
   @media (hover: hover) {
@@ -2395,37 +1317,7 @@
 }
 
   @media (hover: hover) {
-
-    .contact-badge57:is(a):hover {
-      background-color: var(--secondary);
-    }
 }
-
-  @media (hover: hover) {
-    @supports (color: color-mix(in lab, red, red)) {
-      .contact-badge57:is(a):hover {
-        background-color: color-mix(in oklab, var(--secondary) 80%, transparent);
-      }
-    }
-}
-
-  @media (hover: hover) {
-
-    .contact-badge59:is(a):hover {
-      color: var(--muted-foreground);
-    }
-}
-
-  @media (hover: hover) {
-
-    :is(.contact-alertDialog54 > *):is(a):hover {
-      color: var(--foreground);
-    }
-}
-
-  :is(.contact-card75 > *):is(img:first-child), :is(.contact-card75 > *):is(img:last-child) {
-    border-radius: 0;
-  }
 
   :is(.contact-select153 > *):is(span):last-child {
     display: flex;
@@ -2439,43 +1331,6 @@
     gap: calc(var(--spacing) * 2);
   }
 
-  :is(.contact-dropdownMenu102[data-variant="destructive"] > *):is(svg) {
-    color: var(--destructive);
-  }
-
-  :is(.contact-alertDialog52 > *):is(svg:not([data-stylex-sized])) {
-    width: calc(var(--spacing) * 6);
-    height: calc(var(--spacing) * 6);
-  }
-
-  .contact-field114 > * {
-    width: 100%;
-  }
-
-  .contact-field116 > * {
-    width: 100%;
-  }
-
-  @container field-group (width >= 28rem) {
-    .contact-field116 > * {
-      width: auto;
-    }
-}
-
-  .contact-field112 > [data-slot="field-group"] {
-    gap: calc(var(--spacing) * 4);
-  }
-
-  .contact-field115 > [data-slot="field-label"] {
-    flex: auto;
-  }
-
-  @container field-group (width >= 28rem) {
-    .contact-field116 > [data-slot="field-label"] {
-      flex: auto;
-    }
-}
-
   :is(.contact-field115:has( > [data-slot="field-content"]) > [role="checkbox"], .contact-field115:has( > [data-slot="field-content"]) [role="radio"]) {
     margin-top: 1px;
   }
@@ -2486,115 +1341,14 @@
     }
 }
 
-  .contact-field123 > a {
-    text-decoration-line: underline;
-  }
-
-  .contact-field123 > a {
-    text-underline-offset: 4px;
-  }
-
-  .contact-field123 > a:hover {
-    color: var(--primary);
-  }
-
-  .contact-inputGroup129:has( > [data-align="block-end"]) > input {
-    padding-top: calc(var(--spacing) * 3);
-  }
-
-  .contact-inputGroup129:has( > [data-align="block-start"]) > input {
-    padding-bottom: calc(var(--spacing) * 3);
-  }
-
-  .contact-inputGroup129:has( > [data-align="inline-end"]) > input {
-    padding-right: calc(var(--spacing) * 1.5);
-  }
-
-  .contact-inputGroup129:has( > [data-align="inline-start"]) > input {
-    padding-left: calc(var(--spacing) * 1.5);
-  }
-
-  .contact-inputGroup130 > kbd {
-    border-radius: 0;
-  }
-
-  .contact-badge55 > svg {
-    pointer-events: none;
-  }
-
-  .contact-badge55 > svg {
-    width: calc(var(--spacing) * 3) !important;
-    height: calc(var(--spacing) * 3) !important;
-  }
-
   .contact-checkbox83 > svg {
     width: calc(var(--spacing) * 3.5);
     height: calc(var(--spacing) * 3.5);
   }
 
-   .contact-inputGroup136 > svg:not([data-stylex-sized]) {
-    width: calc(var(--spacing) * 3.5);
-    height: calc(var(--spacing) * 3.5);
-  }
 
-  .contact-inputGroup130 > svg:not([data-stylex-sized]) {
-    width: calc(var(--spacing) * 4);
-    height: calc(var(--spacing) * 4);
-  }
-
-  [data-slot="combobox-content"] .contact-inputGroup129:focus-within {
-    border-color: inherit;
-  }
-
-  [data-slot="combobox-content"] .contact-inputGroup129:focus-within {
-    --tw-ring-shadow: var(--tw-ring-inset, ) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-
-  [data-variant="legend"] + .contact-field121 {
-    margin-top: calc(var(--spacing) * -1.5);
-  }
-
-
-  .group-data-\[disabled\=true\]\:opacity-50:is(:where(.group)[data-disabled="true"] *), .contact-fieldLabel:is(:where(.group\/field)[data-disabled="true"] *), .group-data-\[disabled\=true\]\/input-group\:opacity-50:is(:where(.group\/input-group)[data-disabled="true"] *) {
+  .group-data-\[disabled\=true\]\:opacity-50:is(:where(.group)[data-disabled="true"] *), .group-data-\[disabled\=true\]\/input-group\:opacity-50:is(:where(.group\/input-group)[data-disabled="true"] *) {
     opacity: .5;
-  }
-
-  .contact-fieldLabel:has(:where([data-state="checked"]), :where([data-checked]:not([data-checked="false"]))) {
-    border-color: var(--primary);
-  }
-
-  .contact-fieldLabel:has(:where([data-state="checked"]), :where([data-checked]:not([data-checked="false"]))) {
-    background-color: var(--primary);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-fieldLabel:has(:where([data-state="checked"]), :where([data-checked]:not([data-checked="false"]))) {
-      background-color: color-mix(in oklab, var(--primary) 5%, transparent);
-    }
-}
-
-  .contact-fieldLabel:has( > [data-slot="field"]) {
-    border-radius: 0;
-  }
-
-  .contact-fieldLabel:has( > [data-slot="field"]) {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-
-  .contact-fieldLabel:is(.dark *):has(:where([data-state="checked"]), :where([data-checked]:not([data-checked="false"]))) {
-    background-color: var(--primary);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .contact-fieldLabel:is(.dark *):has(:where([data-state="checked"]), :where([data-checked]:not([data-checked="false"]))) {
-      background-color: color-mix(in oklab, var(--primary) 10%, transparent);
-    }
-}
-
-  .contact-fieldLabel > [data-slot="field"] {
-    padding: calc(var(--spacing) * 2);
   }
 /* Variant overrides formerly resolved by Tailwind Merge before rendering. */
 [data-slot="button"][data-size="xs"] svg:not([data-stylex-sized]),
