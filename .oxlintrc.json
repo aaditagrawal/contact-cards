@@ -38,10 +38,7 @@
       "linkComponents": [
         {
           "name": "Link",
-          "linkAttribute": [
-            "href",
-            "to"
-          ]
+          "linkAttribute": ["href", "to"]
         }
       ]
     },
@@ -86,9 +83,7 @@
     "shadcn/no-restyle": [
       "error",
       {
-        "allow": [
-          "layout"
-        ]
+        "allow": ["layout"]
       }
     ],
     "shadcn/no-raw-colors": "error",
@@ -167,11 +162,7 @@
   ],
   "overrides": [
     {
-      "files": [
-        "**/*.{test,spec}.{ts,tsx,js,jsx}",
-        "**/__tests__/**",
-        "**/tests/**"
-      ],
+      "files": ["**/*.{test,spec}.{ts,tsx,js,jsx}", "**/__tests__/**", "**/tests/**"],
       "rules": {
         "no-console": "off",
         "typescript/no-explicit-any": "off",
@@ -182,11 +173,7 @@
       }
     },
     {
-      "files": [
-        "vite.config.{ts,mts,js,mjs}",
-        "vitest.config.{ts,mts,js,mjs}",
-        "**/scripts/**"
-      ],
+      "files": ["vite.config.{ts,mts,js,mjs}", "vitest.config.{ts,mts,js,mjs}", "**/scripts/**"],
       "env": {
         "node": true
       },

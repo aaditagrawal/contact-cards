@@ -16,11 +16,7 @@ import { SimpleFieldRow } from '@/components/contact-form-field-row'
 import { MultiFieldSection } from '@/components/contact-form-multi-field'
 import { ContactFormCustomFields } from '@/components/contact-form-custom-fields'
 import { cn } from '@/lib/utils'
-import type {
-  ContactState,
-  ContactAction,
-  SimpleFieldKey,
-} from '@/lib/contact-types'
+import type { ContactState, ContactAction, SimpleFieldKey } from '@/lib/contact-types'
 import {
   phoneTypes,
   emailTypes,
@@ -71,19 +67,13 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
             id="use-alias"
             size="sm"
             checked={state.useAlias}
-            onCheckedChange={(checked) =>
-              dispatch({ type: 'SET_USE_ALIAS', payload: checked })
-            }
+            onCheckedChange={(checked) => dispatch({ type: 'SET_USE_ALIAS', payload: checked })}
           />
-          <Label htmlFor="use-alias">
-            Use alias instead of name
-          </Label>
+          <Label htmlFor="use-alias">Use alias instead of name</Label>
         </div>
         {state.useAlias ? (
           <div className="flex flex-col gap-1">
-            <Label htmlFor="alias">
-              Alias
-            </Label>
+            <Label htmlFor="alias">Alias</Label>
             <Input
               id="alias"
               value={state.alias}
@@ -101,9 +91,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
             {/* Prefix + Suffix row */}
             <div className="grid grid-cols-2 gap-3">
               <div className="flex flex-col gap-1">
-                <Label htmlFor="prefix">
-                  Prefix
-                </Label>
+                <Label htmlFor="prefix">Prefix</Label>
                 <Input
                   id="prefix"
                   value={state.prefix}
@@ -117,9 +105,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <Label htmlFor="suffix">
-                  Suffix
-                </Label>
+                <Label htmlFor="suffix">Suffix</Label>
                 <Input
                   id="suffix"
                   value={state.suffix}
@@ -136,9 +122,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
             {/* First, Middle, Last */}
             <div className="grid grid-cols-[1fr_0.6fr_1fr] gap-3">
               <div className="flex flex-col gap-1">
-                <Label htmlFor="firstName">
-                  First
-                </Label>
+                <Label htmlFor="firstName">First</Label>
                 <Input
                   id="firstName"
                   value={state.firstName}
@@ -152,9 +136,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <Label htmlFor="middleName">
-                  Middle
-                </Label>
+                <Label htmlFor="middleName">Middle</Label>
                 <Input
                   id="middleName"
                   value={state.middleName}
@@ -168,9 +150,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <Label htmlFor="lastName">
-                  Last
-                </Label>
+                <Label htmlFor="lastName">Last</Label>
                 <Input
                   id="lastName"
                   value={state.lastName}
@@ -295,9 +275,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
               <Button
                 variant="ghost"
                 size="icon-xs"
-                onClick={() =>
-                  dispatch({ type: 'REMOVE_ADDRESS', payload: addr.id })
-                }
+                onClick={() => dispatch({ type: 'REMOVE_ADDRESS', payload: addr.id })}
               >
                 <IconX className="size-3" />
               </Button>
@@ -376,9 +354,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
         <Button
           variant="outline"
           size="sm"
-          onClick={() =>
-            dispatch({ type: 'ADD_ADDRESS', payload: { entryType: 'Home' } })
-          }
+          onClick={() => dispatch({ type: 'ADD_ADDRESS', payload: { entryType: 'Home' } })}
           className="w-fit"
         >
           <IconPlus className="size-3" />
@@ -435,11 +411,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
               </Select>
               <Input
                 value={social.value}
-                placeholder={
-                  social.platform === 'Other'
-                    ? 'URL'
-                    : `@username or URL`
-                }
+                placeholder={social.platform === 'Other' ? 'URL' : `@username or URL`}
                 onChange={(e) =>
                   dispatch({
                     type: 'UPDATE_SOCIAL',
@@ -453,9 +425,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
               variant="ghost"
               size="icon-xs"
               className="mt-1 shrink-0"
-              onClick={() =>
-                dispatch({ type: 'REMOVE_SOCIAL', payload: social.id })
-              }
+              onClick={() => dispatch({ type: 'REMOVE_SOCIAL', payload: social.id })}
             >
               <IconX className="size-3" />
             </Button>
@@ -464,9 +434,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
         <Button
           variant="outline"
           size="sm"
-          onClick={() =>
-            dispatch({ type: 'ADD_SOCIAL', payload: { platform: 'LinkedIn' } })
-          }
+          onClick={() => dispatch({ type: 'ADD_SOCIAL', payload: { platform: 'LinkedIn' } })}
           className="w-fit"
         >
           <IconPlus className="size-3" />
@@ -506,10 +474,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
         <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
           Custom Fields
         </h2>
-        <ContactFormCustomFields
-          fields={state.customFields}
-          dispatch={dispatch}
-        />
+        <ContactFormCustomFields fields={state.customFields} dispatch={dispatch} />
       </section>
     </div>
   )

@@ -8,12 +8,7 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import { useTheme } from '@/lib/use-theme'
 import { contactReducer, initialContactState } from '@/lib/contact-reducer'
 import { cn } from '@/lib/utils'
-import {
-  CARD_STYLES,
-  DEFAULT_CUSTOM_PALETTE,
-  PALETTES,
-  isLightHex,
-} from '@/lib/card-themes'
+import { CARD_STYLES, DEFAULT_CUSTOM_PALETTE, PALETTES, isLightHex } from '@/lib/card-themes'
 import type { CardStyle, Palette } from '@/lib/card-themes'
 
 export const Route = createFileRoute('/')({ component: ContactCardPage })
@@ -29,7 +24,7 @@ function ContactCardPage() {
   const palette: Palette =
     paletteId === 'custom'
       ? customPalette
-      : PALETTES.find((p) => p.id === paletteId) ?? PALETTES[0]
+      : (PALETTES.find((p) => p.id === paletteId) ?? PALETTES[0])
 
   function updateCustom(field: 'bg' | 'ink' | 'accent', value: string) {
     setCustomPalette((c) => ({
@@ -72,8 +67,8 @@ function ContactCardPage() {
                 <span className="text-muted-foreground">designed in seconds.</span>
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Toggle the fields you want, choose a style and palette, then
-                download a PNG with an embedded QR code.
+                Toggle the fields you want, choose a style and palette, then download a PNG with an
+                embedded QR code.
               </p>
             </section>
 
@@ -170,7 +165,8 @@ function ContactCardPage() {
                   </button>
                 </div>
                 <span className="text-2xs text-muted-foreground/80 leading-snug">
-                  Hides decorative labels like “Calling Card”, “VCARD / 0X01”, scan captions and the terminal chrome bar.
+                  Hides decorative labels like “Calling Card”, “VCARD / 0X01”, scan captions and the
+                  terminal chrome bar.
                 </span>
               </ControlGroup>
             </section>
@@ -191,7 +187,12 @@ function ContactCardPage() {
       >
         <StageBackdrop />
         <div className="relative z-10 w-full max-w-150">
-          <CardPreview state={state} palette={palette} cardStyle={cardStyle} showOrnaments={showOrnaments} />
+          <CardPreview
+            state={state}
+            palette={palette}
+            cardStyle={cardStyle}
+            showOrnaments={showOrnaments}
+          />
         </div>
       </div>
     </div>
@@ -207,10 +208,7 @@ function StageBackdrop() {
         className="pointer-events-none absolute inset-0 opacity-35 dark:opacity-18 stage-dots"
         aria-hidden
       />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-border/70"
-        aria-hidden
-      />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-border/70" aria-hidden />
     </>
   )
 }
@@ -227,14 +225,8 @@ function ControlGroup({
   return (
     <div className="flex flex-col gap-2.5">
       <div className="flex items-baseline justify-between">
-        <span className="text-2xs text-muted-foreground uppercase tracking-[0.24em]">
-          {label}
-        </span>
-        {hint && (
-          <span className="text-2xs text-muted-foreground/70 tracking-wide">
-            {hint}
-          </span>
-        )}
+        <span className="text-2xs text-muted-foreground uppercase tracking-[0.24em]">{label}</span>
+        {hint && <span className="text-2xs text-muted-foreground/70 tracking-wide">{hint}</span>}
       </div>
       {children}
     </div>
@@ -278,14 +270,9 @@ function PaletteSwatch({
       <span className="text-[13px] leading-none text-(color:--swatch-ink) font-(family-name:--font-serif) italic font-medium">
         Aa
       </span>
-      <span
-        className="absolute bottom-1.5 right-1.5 size-1.5 bg-(--swatch-accent)"
-        aria-hidden
-      />
+      <span className="absolute bottom-1.5 right-1.5 size-1.5 bg-(--swatch-accent)" aria-hidden />
       {customMarker && (
-        <span
-          className="absolute top-1 left-1 text-4xs uppercase tracking-[0.15em] text-(color:--swatch-mute)"
-        >
+        <span className="absolute top-1 left-1 text-4xs uppercase tracking-[0.15em] text-(color:--swatch-mute)">
           ✎
         </span>
       )}
@@ -304,9 +291,7 @@ function CustomColorField({
 }) {
   return (
     <label className="flex flex-col gap-1.5 group cursor-pointer">
-      <span className="text-3xs text-muted-foreground uppercase tracking-[0.2em]">
-        {label}
-      </span>
+      <span className="text-3xs text-muted-foreground uppercase tracking-[0.2em]">{label}</span>
       <span className="relative flex items-center gap-2 border bg-background p-1.5 group-hover:border-foreground/50 transition-colors">
         <span className="relative size-5 shrink-0 border border-border overflow-hidden">
           <span
@@ -321,9 +306,7 @@ function CustomColorField({
             className="absolute inset-0 opacity-0 cursor-pointer"
           />
         </span>
-        <span className="text-2xs font-mono uppercase tracking-wider truncate">
-          {value}
-        </span>
+        <span className="text-2xs font-mono uppercase tracking-wider truncate">{value}</span>
       </span>
     </label>
   )

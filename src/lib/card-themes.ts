@@ -1,9 +1,4 @@
-export type CardStyle =
-  | 'editorial'
-  | 'brutalist'
-  | 'terminal'
-  | 'mono'
-  | 'luxe'
+export type CardStyle = 'editorial' | 'brutalist' | 'terminal' | 'mono' | 'luxe'
 
 export interface CardStyleMeta {
   id: CardStyle
@@ -30,13 +25,69 @@ export interface Palette {
 }
 
 export const PALETTES: ReadonlyArray<Palette> = [
-  { id: 'onyx',      name: 'Onyx',      bg: '#0a0a0a', ink: '#f4f4f2', accent: '#cdcdcd', mute: '#7a7a7a', isLight: false },
-  { id: 'bone',      name: 'Bone',      bg: '#f3ede2', ink: '#1a1814', accent: '#7a4f25', mute: '#7a7264', isLight: true  },
-  { id: 'champagne', name: 'Champagne', bg: '#ebe1cd', ink: '#2b1f10', accent: '#a07a35', mute: '#8c7c5f', isLight: true  },
-  { id: 'plum',      name: 'Plum',      bg: '#2a0f24', ink: '#f2e3df', accent: '#d6a4a4', mute: '#9b7a82', isLight: false },
-  { id: 'pine',      name: 'Pine',      bg: '#142b22', ink: '#ebead6', accent: '#a8d3a4', mute: '#7e9388', isLight: false },
-  { id: 'carbon',    name: 'Carbon',    bg: '#161616', ink: '#f5f3ef', accent: '#ff4d2e', mute: '#7a7a7a', isLight: false },
-  { id: 'steel',     name: 'Steel',     bg: '#2c343a', ink: '#e8eef2', accent: '#7fc6e3', mute: '#8a98a1', isLight: false },
+  {
+    id: 'onyx',
+    name: 'Onyx',
+    bg: '#0a0a0a',
+    ink: '#f4f4f2',
+    accent: '#cdcdcd',
+    mute: '#7a7a7a',
+    isLight: false,
+  },
+  {
+    id: 'bone',
+    name: 'Bone',
+    bg: '#f3ede2',
+    ink: '#1a1814',
+    accent: '#7a4f25',
+    mute: '#7a7264',
+    isLight: true,
+  },
+  {
+    id: 'champagne',
+    name: 'Champagne',
+    bg: '#ebe1cd',
+    ink: '#2b1f10',
+    accent: '#a07a35',
+    mute: '#8c7c5f',
+    isLight: true,
+  },
+  {
+    id: 'plum',
+    name: 'Plum',
+    bg: '#2a0f24',
+    ink: '#f2e3df',
+    accent: '#d6a4a4',
+    mute: '#9b7a82',
+    isLight: false,
+  },
+  {
+    id: 'pine',
+    name: 'Pine',
+    bg: '#142b22',
+    ink: '#ebead6',
+    accent: '#a8d3a4',
+    mute: '#7e9388',
+    isLight: false,
+  },
+  {
+    id: 'carbon',
+    name: 'Carbon',
+    bg: '#161616',
+    ink: '#f5f3ef',
+    accent: '#ff4d2e',
+    mute: '#7a7a7a',
+    isLight: false,
+  },
+  {
+    id: 'steel',
+    name: 'Steel',
+    bg: '#2c343a',
+    ink: '#e8eef2',
+    accent: '#7fc6e3',
+    mute: '#8a98a1',
+    isLight: false,
+  },
 ] as const
 
 export const DEFAULT_CUSTOM_PALETTE: Palette = {
