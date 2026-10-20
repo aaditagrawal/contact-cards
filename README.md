@@ -35,7 +35,7 @@ bun install
 bun run dev
 
 # Type check
-bunx tsc --noEmit
+bunx tsrs --noEmit
 
 # Build for production
 bun run build

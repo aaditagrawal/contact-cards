@@ -16,7 +16,11 @@ import { SimpleFieldRow } from '@/components/contact-form-field-row'
 import { MultiFieldSection } from '@/components/contact-form-multi-field'
 import { ContactFormCustomFields } from '@/components/contact-form-custom-fields'
 import { cn } from '@/lib/utils'
-import type { ContactState, ContactAction, SimpleFieldKey } from '@/lib/contact-types'
+import type {
+  ContactState,
+  ContactAction,
+  SimpleFieldKey,
+} from '@/lib/contact-types'
 import {
   phoneTypes,
   emailTypes,
@@ -59,21 +63,25 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
     <div className="flex flex-col gap-6">
       {/* Name Section */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Name</h2>
+        <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
+          Name
+        </h2>
         <div className="flex items-center gap-3">
           <Switch
             id="use-alias"
             size="sm"
             checked={state.useAlias}
-            onCheckedChange={(checked) => dispatch({ type: 'SET_USE_ALIAS', payload: checked })}
+            onCheckedChange={(checked) =>
+              dispatch({ type: 'SET_USE_ALIAS', payload: checked })
+            }
           />
-          <Label htmlFor="use-alias" className="text-xs">
+          <Label htmlFor="use-alias">
             Use alias instead of name
           </Label>
         </div>
         {state.useAlias ? (
           <div className="flex flex-col gap-1">
-            <Label htmlFor="alias" className="text-xs">
+            <Label htmlFor="alias">
               Alias
             </Label>
             <Input
@@ -93,7 +101,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
             {/* Prefix + Suffix row */}
             <div className="grid grid-cols-2 gap-3">
               <div className="flex flex-col gap-1">
-                <Label htmlFor="prefix" className="text-xs text-muted-foreground">
+                <Label htmlFor="prefix">
                   Prefix
                 </Label>
                 <Input
@@ -109,7 +117,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <Label htmlFor="suffix" className="text-xs text-muted-foreground">
+                <Label htmlFor="suffix">
                   Suffix
                 </Label>
                 <Input
@@ -128,7 +136,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
             {/* First, Middle, Last */}
             <div className="grid grid-cols-[1fr_0.6fr_1fr] gap-3">
               <div className="flex flex-col gap-1">
-                <Label htmlFor="firstName" className="text-xs">
+                <Label htmlFor="firstName">
                   First
                 </Label>
                 <Input
@@ -144,7 +152,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <Label htmlFor="middleName" className="text-xs text-muted-foreground">
+                <Label htmlFor="middleName">
                   Middle
                 </Label>
                 <Input
@@ -160,7 +168,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <Label htmlFor="lastName" className="text-xs">
+                <Label htmlFor="lastName">
                   Last
                 </Label>
                 <Input
@@ -184,7 +192,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
 
       {/* Phone Numbers */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
           Phone
         </h2>
         <MultiFieldSection
@@ -201,7 +209,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
 
       {/* Email Addresses */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
           Email
         </h2>
         <MultiFieldSection
@@ -218,7 +226,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
 
       {/* Websites */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
           Website
         </h2>
         <MultiFieldSection
@@ -235,7 +243,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
 
       {/* Professional */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
           Professional
         </h2>
         {simpleRow('jobTitle', 'Job Title')}
@@ -247,7 +255,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
 
       {/* Addresses */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
           Address
         </h2>
         {state.addresses.map((addr) => (
@@ -272,7 +280,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 }
                 disabled={!addr.enabled}
               >
-                <SelectTrigger size="sm" className="w-[100px]">
+                <SelectTrigger size="sm" className="w-25">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -287,7 +295,9 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
               <Button
                 variant="ghost"
                 size="icon-xs"
-                onClick={() => dispatch({ type: 'REMOVE_ADDRESS', payload: addr.id })}
+                onClick={() =>
+                  dispatch({ type: 'REMOVE_ADDRESS', payload: addr.id })
+                }
               >
                 <IconX className="size-3" />
               </Button>
@@ -366,7 +376,9 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
         <Button
           variant="outline"
           size="sm"
-          onClick={() => dispatch({ type: 'ADD_ADDRESS', payload: { entryType: 'Home' } })}
+          onClick={() =>
+            dispatch({ type: 'ADD_ADDRESS', payload: { entryType: 'Home' } })
+          }
           className="w-fit"
         >
           <IconPlus className="size-3" />
@@ -378,7 +390,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
 
       {/* Social Profiles */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
           Social
         </h2>
         {state.socials.map((social) => (
@@ -410,7 +422,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
                 }
                 disabled={!social.enabled}
               >
-                <SelectTrigger size="sm" className="w-[120px] shrink-0">
+                <SelectTrigger size="sm" className="w-30 shrink-0">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -423,7 +435,11 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
               </Select>
               <Input
                 value={social.value}
-                placeholder={social.platform === 'Other' ? 'URL' : `@username or URL`}
+                placeholder={
+                  social.platform === 'Other'
+                    ? 'URL'
+                    : `@username or URL`
+                }
                 onChange={(e) =>
                   dispatch({
                     type: 'UPDATE_SOCIAL',
@@ -437,7 +453,9 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
               variant="ghost"
               size="icon-xs"
               className="mt-1 shrink-0"
-              onClick={() => dispatch({ type: 'REMOVE_SOCIAL', payload: social.id })}
+              onClick={() =>
+                dispatch({ type: 'REMOVE_SOCIAL', payload: social.id })
+              }
             >
               <IconX className="size-3" />
             </Button>
@@ -446,7 +464,9 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
         <Button
           variant="outline"
           size="sm"
-          onClick={() => dispatch({ type: 'ADD_SOCIAL', payload: { platform: 'LinkedIn' } })}
+          onClick={() =>
+            dispatch({ type: 'ADD_SOCIAL', payload: { platform: 'LinkedIn' } })
+          }
           className="w-fit"
         >
           <IconPlus className="size-3" />
@@ -458,7 +478,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
 
       {/* Other */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
           Other
         </h2>
         {simpleRow('pronouns', 'Pronouns', 'text', 'they/them')}
@@ -470,7 +490,7 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
 
       {/* Emergency Info */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
           Emergency Info
         </h2>
         {simpleRow('bloodGroup', 'Blood Group', 'text', 'A+, O-, etc.')}
@@ -483,10 +503,13 @@ export function ContactForm({ state, dispatch }: ContactFormProps) {
 
       {/* Custom Fields */}
       <section className="flex flex-col gap-4">
-        <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+        <h2 className="text-2xs font-medium text-muted-foreground uppercase tracking-[0.22em]">
           Custom Fields
         </h2>
-        <ContactFormCustomFields fields={state.customFields} dispatch={dispatch} />
+        <ContactFormCustomFields
+          fields={state.customFields}
+          dispatch={dispatch}
+        />
       </section>
     </div>
   )

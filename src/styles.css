@@ -2,8 +2,20 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/fraunces/wght-italic.css";
 
 @custom-variant dark (&:is(.dark *));
+
+/* Card font stacks — usable as inline font-family values */
+:root {
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, Menlo, monospace;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Space Grotesk Variable', 'Inter Variable', ui-sans-serif, sans-serif;
+  --font-serif: 'Fraunces Variable', 'Iowan Old Style', Georgia, serif;
+}
 
 :root {
     --background: oklch(1 0 0);
@@ -114,6 +126,62 @@
     --radius-2xl: calc(var(--radius) + 8px);
     --radius-3xl: calc(var(--radius) + 12px);
     --radius-4xl: calc(var(--radius) + 16px);
+}
+
+@theme {
+    --text-4xs: 0.5rem;
+    --text-3xs: 0.5625rem;
+    --text-2xs: 0.625rem;
+    --color-terminal-bg: #0b0b0c;
+    --color-terminal-ink: #f4f4f2;
+    --color-chrome: rgb(255 255 255 / 0.04);
+    --color-chrome-line: rgb(255 255 255 / 0.06);
+    --color-chrome-dot: rgb(255 255 255 / 0.2);
+    --color-chrome-text: rgb(255 255 255 / 0.4);
+    --color-terminal-sub: rgb(255 255 255 / 0.55);
+    --color-terminal-value: rgb(255 255 255 / 0.85);
+}
+
+@utility stage-glow {
+    background-image: radial-gradient(ellipse 70% 60% at 50% 30%, color-mix(in oklab, var(--color-foreground) 8%, transparent) 0%, transparent 70%);
+}
+
+@utility stage-dots {
+    background-image: radial-gradient(circle at 1px 1px, var(--color-muted-foreground) 0.7px, transparent 0);
+    background-size: 14px 14px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+@utility card-sheen {
+    background: radial-gradient(circle at var(--sheen-x, 50%) var(--sheen-y, 50%), rgb(255 255 255 / var(--sheen-strength, 0.4)) 0%, transparent 55%);
+}
+
+@utility card-brush {
+    background: linear-gradient(var(--brush-angle, 135deg), rgb(255 255 255 / var(--brush-strength, 0.15)) 0%, transparent 45%, rgb(0 0 0 / var(--brush-dark, 0.2)) 100%);
+}
+
+@utility card-edge-light {
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.55), inset 0 1px 0 rgb(255 255 255 / 0.7), inset 0 -1px 0 rgb(0 0 0 / 0.1);
+}
+
+@utility card-edge-dark {
+    box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.16), inset 0 1px 0 rgb(255 255 255 / 0.28), inset 0 -1px 0 rgb(0 0 0 / 0.5);
+}
+
+@utility fvs-display {
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+}
+
+@utility fvs-display-flat {
+    font-variation-settings: "opsz" 144, "SOFT" 0;
+}
+
+@utility fvs-caption {
+    font-variation-settings: "opsz" 14;
+}
+
+@utility transition-var {
+    transition: var(--transition);
 }
 
 @layer base {
