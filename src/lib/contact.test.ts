@@ -20,6 +20,17 @@ function decodeText(value: string) {
 const contact = (): ContactState => structuredClone(initialContactState)
 
 describe('vCard export', () => {
+  it('keeps raw newlines inside text without creating new properties', () => {
+    const state = contact()
+    state.notes = { enabled: true, value: 'Hello\r\nTEL:injected\nEND:VCARD' }
+    const parsed = properties(generateVCard(state))
+    expect(parsed.filter((item) => item.name === 'TEL')).toHaveLength(0)
+    expect(parsed.filter((item) => item.name === 'END')).toHaveLength(1)
+    expect(decodeText(parsed.find((item) => item.name === 'NOTE')?.value ?? '')).toBe(
+      'Hello\nTEL:injected\nEND:VCARD',
+    )
+  })
+
   it('exports structured names, aliases, typed fields, addresses and social URLs', () => {
     const state = contact()
     Object.assign(state, {
