@@ -55,6 +55,9 @@
       },
     },
   },
+  "patchedDependencies": {
+    "braces@3.0.3": "patches/braces@3.0.3.patch",
+  },
   "packages": {
     "@asamuzakjp/css-color": ["@asamuzakjp/css-color@7.1.7", "", { "dependencies": { "@csstools/css-calc": "^3.4.3", "@csstools/css-color-parser": "^4.2.6", "@csstools/css-parser-algorithms": "^4.0.2", "@csstools/css-tokenizer": "^4.0.2", "lru-cache": "^11.5.3" } }, "sha512-Q7ioeear07HwixdIitIn9KS1LZi97CEDFCSjPNm9v+y8KNbsu9q4Lrd4zUQW4faED+E7qxvfeVnbNRW46wFKuw=="],
 

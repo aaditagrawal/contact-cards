@@ -13,7 +13,9 @@
     "check": "bun run format:check && bun run typecheck && bun run lint",
     "typecheck": "tsrs --noEmit",
     "lint:fix": "oxlint . --fix",
-    "format:check": "oxfmt --check ."
+    "format:check": "oxfmt --check .",
+    "test:security": "node scripts/security-braces.mjs",
+    "test:smoke": "node scripts/smoke-production.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
@@ -63,5 +65,8 @@
     "vite": "^8.3.4",
     "vitest": "^5.0.5",
     "web-vitals": "^6.2.3"
+  },
+  "patchedDependencies": {
+    "braces@3.0.3": "patches/braces@3.0.3.patch"
   }
 }

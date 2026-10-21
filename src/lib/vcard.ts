@@ -50,21 +50,53 @@ function socialUrl(platform: string, handle: string): string {
   }
 }
 
+function escapeText(value: string): string {
+  return value
+    .replaceAll('\\', '\\\\')
+    .replaceAll(';', '\\;')
+    .replaceAll(',', '\\,')
+    .replace(/\r\n|\r|\n/g, '\\n')
+}
+
+// URI values retain their delimiters; encode raw line breaks to prevent a new property.
+function escapeUri(value: string): string {
+  return value.replaceAll('\r', '%0D').replaceAll('\n', '%0A')
+}
+
+function foldContentLine(line: string): string {
+  const encoder = new TextEncoder()
+  const parts: string[] = []
+  let part = ''
+  let octets = 0
+  for (const character of line) {
+    const size = encoder.encode(character).length
+    if (octets + size > 75) {
+      parts.push(part)
+      part = ' '
+      octets = 1
+    }
+    part += character
+    octets += size
+  }
+  parts.push(part)
+  return parts.join('\r\n')
+}
+
 export function generateVCard(contact: ContactState): string {
   const lines: string[] = ['BEGIN:VCARD', 'VERSION:3.0']
 
   // Name
   if (contact.useAlias && contact.alias) {
-    lines.push(`FN:${contact.alias}`)
-    lines.push(`N:${contact.alias};;;;`)
+    lines.push(`FN:${escapeText(contact.alias)}`)
+    lines.push(`N:${escapeText(contact.alias)};;;;`)
   } else {
     const parts = [contact.firstName, contact.middleName, contact.lastName].filter(Boolean)
     const full = [contact.prefix, ...parts, contact.suffix].filter(Boolean).join(' ')
     if (full) {
-      lines.push(`FN:${full}`)
+      lines.push(`FN:${escapeText(full)}`)
       // N: Last;First;Middle;Prefix;Suffix
       lines.push(
-        `N:${contact.lastName};${contact.firstName};${contact.middleName};${contact.prefix};${contact.suffix}`,
+        `N:${escapeText(contact.lastName)};${escapeText(contact.firstName)};${escapeText(contact.middleName)};${escapeText(contact.prefix)};${escapeText(contact.suffix)}`,
       )
     }
   }
@@ -72,21 +104,21 @@ export function generateVCard(contact: ContactState): string {
   // Phones
   for (const p of contact.phones) {
     if (p.enabled && p.value) {
-      lines.push(`TEL;TYPE=${vcardTypeMap(p.type)}:${p.value}`)
+      lines.push(`TEL;TYPE=${vcardTypeMap(p.type)}:${escapeText(p.value)}`)
     }
   }
 
   // Emails
   for (const e of contact.emails) {
     if (e.enabled && e.value) {
-      lines.push(`EMAIL;TYPE=${vcardTypeMap(e.type)}:${e.value}`)
+      lines.push(`EMAIL;TYPE=${vcardTypeMap(e.type)}:${escapeText(e.value)}`)
     }
   }
 
   // Websites
   for (const w of contact.websites) {
     if (w.enabled && w.value) {
-      lines.push(`URL;TYPE=${vcardTypeMap(w.type)}:${w.value}`)
+      lines.push(`URL;TYPE=${vcardTypeMap(w.type)}:${escapeUri(w.value)}`)
     }
   }
 
@@ -96,14 +128,14 @@ export function generateVCard(contact: ContactState): string {
   if (hasCompany || hasDept) {
     const org =
       hasCompany && hasDept
-        ? `${contact.company.value};${contact.department.value}`
+        ? `${escapeText(contact.company.value)};${escapeText(contact.department.value)}`
         : hasCompany
-          ? contact.company.value
-          : `;${contact.department.value}`
+          ? escapeText(contact.company.value)
+          : `;${escapeText(contact.department.value)}`
     lines.push(`ORG:${org}`)
   }
   if (contact.jobTitle.enabled && contact.jobTitle.value) {
-    lines.push(`TITLE:${contact.jobTitle.value}`)
+    lines.push(`TITLE:${escapeText(contact.jobTitle.value)}`)
   }
 
   // Addresses
@@ -112,7 +144,7 @@ export function generateVCard(contact: ContactState): string {
     const hasAddr = a.street || a.city || a.state || a.zip || a.country
     if (hasAddr) {
       lines.push(
-        `ADR;TYPE=${vcardTypeMap(a.type)}:;;${a.street};${a.city};${a.state};${a.zip};${a.country}`,
+        `ADR;TYPE=${vcardTypeMap(a.type)}:;;${escapeText(a.street)};${escapeText(a.city)};${escapeText(a.state)};${escapeText(a.zip)};${escapeText(a.country)}`,
       )
     }
   }
@@ -121,47 +153,49 @@ export function generateVCard(contact: ContactState): string {
   for (const s of contact.socials) {
     if (s.enabled && s.value) {
       const url = socialUrl(s.platform, s.value)
-      lines.push(`X-SOCIALPROFILE;TYPE=${s.platform.replace(/[^A-Za-z0-9]/g, '')}:${url}`)
+      lines.push(
+        `X-SOCIALPROFILE;TYPE=${s.platform.replace(/[^A-Za-z0-9]/g, '')}:${escapeUri(url)}`,
+      )
     }
   }
 
   // Birthday
   if (contact.birthday.enabled && contact.birthday.value) {
-    lines.push(`BDAY:${contact.birthday.value}`)
+    lines.push(`BDAY:${escapeText(contact.birthday.value)}`)
   }
 
   // Pronouns (as X-property, widely supported)
   if (contact.pronouns.enabled && contact.pronouns.value) {
-    lines.push(`X-PRONOUNS:${contact.pronouns.value}`)
+    lines.push(`X-PRONOUNS:${escapeText(contact.pronouns.value)}`)
   }
 
   // Notes
   if (contact.notes.enabled && contact.notes.value) {
-    lines.push(`NOTE:${contact.notes.value}`)
+    lines.push(`NOTE:${escapeText(contact.notes.value)}`)
   }
 
   // Emergency info
   if (contact.bloodGroup.enabled && contact.bloodGroup.value) {
-    lines.push(`X-BLOOD-GROUP:${contact.bloodGroup.value}`)
+    lines.push(`X-BLOOD-GROUP:${escapeText(contact.bloodGroup.value)}`)
   }
   if (contact.allergies.enabled && contact.allergies.value) {
-    lines.push(`X-ALLERGIES:${contact.allergies.value}`)
+    lines.push(`X-ALLERGIES:${escapeText(contact.allergies.value)}`)
   }
   if (contact.medicalNotes.enabled && contact.medicalNotes.value) {
-    lines.push(`X-MEDICAL-NOTES:${contact.medicalNotes.value}`)
+    lines.push(`X-MEDICAL-NOTES:${escapeText(contact.medicalNotes.value)}`)
   }
   if (contact.emergencyContact.enabled && contact.emergencyContact.value) {
-    lines.push(`X-EMERGENCY-CONTACT:${contact.emergencyContact.value}`)
+    lines.push(`X-EMERGENCY-CONTACT:${escapeText(contact.emergencyContact.value)}`)
   }
 
   // Custom fields
   for (const cf of contact.customFields) {
     if (cf.enabled && cf.label && cf.value) {
       const safeLabel = cf.label.toUpperCase().replace(/[^A-Z0-9-]/g, '-')
-      lines.push(`X-${safeLabel}:${cf.value}`)
+      lines.push(`X-${safeLabel}:${escapeText(cf.value)}`)
     }
   }
 
   lines.push('END:VCARD')
-  return lines.join('\r\n')
+  return lines.map(foldContentLine).join('\r\n')
 }
