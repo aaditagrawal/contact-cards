@@ -1,5 +1,4 @@
 import { useMemo } from 'react'
-import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
 import { Label } from '@/components/ui/label'
@@ -49,32 +48,29 @@ function FieldGroup({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
-const fieldVariants = cva('data-[invalid=true]:text-destructive gap-2 group/field flex w-full', {
-  variants: {
-    orientation: {
-      vertical: 'flex-col [&>*]:w-full [&>.sr-only]:w-auto',
-      horizontal:
-        'flex-row items-center [&>[data-slot=field-label]]:flex-auto has-[>[data-slot=field-content]]:items-start has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px',
-      responsive:
-        'flex-col [&>*]:w-full [&>.sr-only]:w-auto @md/field-group:flex-row @md/field-group:items-center @md/field-group:[&>*]:w-auto @md/field-group:[&>[data-slot=field-label]]:flex-auto @md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px',
-    },
-  },
-  defaultVariants: {
-    orientation: 'vertical',
-  },
-})
+const fieldOrientations = {
+  vertical: 'flex-col [&>*]:w-full [&>.sr-only]:w-auto',
+  horizontal:
+    'flex-row items-center [&>[data-slot=field-label]]:flex-auto has-[>[data-slot=field-content]]:items-start has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px',
+  responsive:
+    'flex-col [&>*]:w-full [&>.sr-only]:w-auto @md/field-group:flex-row @md/field-group:items-center @md/field-group:[&>*]:w-auto @md/field-group:[&>[data-slot=field-label]]:flex-auto @md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px',
+}
 
 function Field({
   className,
   orientation = 'vertical',
   ...props
-}: React.ComponentProps<'div'> & VariantProps<typeof fieldVariants>) {
+}: React.ComponentProps<'div'> & { orientation?: keyof typeof fieldOrientations | null }) {
   return (
     <div
       role="group"
       data-slot="field"
       data-orientation={orientation}
-      className={cn(fieldVariants({ orientation }), className)}
+      className={cn(
+        'data-[invalid=true]:text-destructive gap-2 group/field flex w-full',
+        orientation && fieldOrientations[orientation],
+        className,
+      )}
       {...props}
     />
   )
