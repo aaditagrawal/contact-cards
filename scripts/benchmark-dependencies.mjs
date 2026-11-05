@@ -244,8 +244,7 @@ try {
       i % 2 ? 'px-2' : false,
       'px-4',
     ])
-    for (const values of uncached)
-      assert.equal(before[0].cn(...values), after[0].cn(...values))
+    for (const values of uncached) assert.equal(before[0].cn(...values), after[0].cn(...values))
     await measure(
       'clsx',
       'cn cache misses, 2048 distinct width/spacing combinations exceeding merge cache capacity',
