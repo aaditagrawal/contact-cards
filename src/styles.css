@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
 @import '@fontsource-variable/jetbrains-mono';
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/space-grotesk';
@@ -8,6 +7,15 @@
 @import '@fontsource-variable/fraunces/wght-italic.css';
 
 @custom-variant dark (&:is(.dark *));
+
+/* The controls expose Radix state and orientation attributes. */
+@custom-variant data-open (&:where([data-state='open']));
+@custom-variant data-closed (&:where([data-state='closed']));
+@custom-variant data-checked (&:where([data-state='checked']));
+@custom-variant data-unchecked (&:where([data-state='unchecked']));
+@custom-variant data-disabled (&:where([data-disabled]:not([data-disabled='false'])));
+@custom-variant data-horizontal (&:where([data-orientation='horizontal']));
+@custom-variant data-vertical (&:where([data-orientation='vertical']));
 
 /* Card font stacks — usable as inline font-family values */
 :root {
